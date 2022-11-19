@@ -1,10 +1,20 @@
-### Patterns Promote Design and A Common Vocabulary
+_
+
+# **Adaptive Code,**
+# **Domain Driven Design (DDD) and**
+# **Microservice**
+
+_
+
+<div class="page"/>
+
+## Patterns Promote Design and A Common Vocabulary
 
 Although I’m an inveterate reinventor of wheels, the thrust of my argument is not that we should all throw away our frameworks and build MVC applications from scratch (at least not always). It is rather that, as developers, we should understand the problems that frameworks solve, and the strategies they use to solve them. We should be able to evaluate frameworks not only functionally but in terms of the design decisions their creators have made, and to judge the quality of their implementations. And yes, when the conditions are right, we should go ahead and build our own spare and focused applications, and, over time, compile our own libraries of reusable code.
 
 .
 
-### Advocacy and Agnosticism: The Object Debate
+## Advocacy and Agnosticism: The Object Debate
 
 Many excellent programmers have produced excellent code for years without using objects.
 
@@ -16,13 +26,11 @@ Object-oriented code Tries to minimize these dependencies by moving responsibili
 
 .
 
----
-
-### **From object basics through design pattern principles**
-
----
+## From object basics through design pattern principles
 
 .
+
+<div class="page"/>
 
 _
 
@@ -95,6 +103,8 @@ Consider a method that summarizes a product
 
 As ShopProduct is beginning to feel like two classes in one, I could accept this and create two types rather than one.
 
+<div class="page"/>
+
 Consider with the ShopProductWriter class? Its write() method is designed to work with a single type: ShopProduct
 
     // listing 03.34
@@ -117,6 +127,8 @@ Consider with the ShopProductWriter class? Its write() method is designed to wor
     }
 
 .
+
+<div class="page"/>
 
 _
 
@@ -350,6 +362,8 @@ _
 
 Program to an interface not an implementation.
 
+<div class="page"/>
+
 _
 
 ## Four Signposts
@@ -379,6 +393,8 @@ _
 
 .
 
+<div class="page"/>
+
 _
 
 # Patterns
@@ -394,6 +410,8 @@ _
 - Design Patterns are Used By Popular Frameworks
 
 .
+
+<div class="page"/>
 
 _
 
@@ -415,6 +433,8 @@ Inheritance is a powerful way of designing for changing circumstances or context
 
 ![Figure 8-4. Moving algorithms into a separate type](https://raw.githubusercontent.com/dandisy/adaptive-code/main/Figure%208-4.%20Moving%20algorithms%20into%20a%20separate%20type.jpeg)
 
+<div class="page"/>
+
 _
 
 ## Decoupling
@@ -424,6 +444,8 @@ That it makes sense to build independent components. A system with highly interd
 Reusability is one of the key objectives of object-oriented design, and tight coupling is its enemy. You can diagnose tight coupling when you see that a change to one component of a system necessitates many changes elsewhere. You should aspire to create independent components, so that you can make changes without a domino effect of unintended consequences. When you alter a component, the extent to which it is independent is related to the likelihood that your changes will cause other parts of your system to fail.
 
 The problem comes when such code is scattered throughout a project. For example: talking to databases is not the primary responsibility of most classes in a system, so the best strategy is to extract such code and group it together behind a common interface. In this way, you promote the independence of your classes. At the same time, by concentrating your gateway code in one place, you make it much easier to switch to a new platform without disturbing your wider system. This process, the hiding of implementation behind a clean interface, is known as encapsulation.
+
+![Figure 8-5. The DBAL package decouples client code from database objects](https://raw.githubusercontent.com/dandisy/adaptive-code/main/Figure%208-5.%20The%20DBAL%20package%20decouples%20client%20code%20from%20database%20objects.jpeg)
 
 _
 
@@ -502,6 +524,8 @@ specialized database API.
     $mgr->register($lessons1);
     $mgr->register($lessons2);
 
+![Figure 8-6. The Notifier class separates client code from Notifier implementations](https://raw.githubusercontent.com/dandisy/adaptive-code/main/Figure%208-6.%20The%20Notifier%20class%20separates%20client%20code%20from%20Notifier%20implementations.jpeg)
+
 _
 
 ## Code to an Interface, Not to an Implementation
@@ -533,13 +557,13 @@ The Gang of Four recommend that you actively seek varying elements in your class
 
 So how do you spot variation? One sign is the misuse of inheritance. This might include inheritance deployed according to multiple forces at one time (e.g., lecture/seminar and fixed/timed cost). It might also include subclassing on an algorithm where the algorithm is incidental to the core responsibility of the type. The other sign of variation suitable for encapsulation is, as you have seen, a conditional expression.
 
-> Encapsulate the Concept that Varies
-
 If you find that you are drowning in subclasses, it may be that you should be extracting the reason for all this subclassing into its own type. This is particularly the case if the reason is to achieve an end that is incidental to your type’s main purpose.
 
 Given a type UpdatableThing, for example, you may find yourself creating FtpUpdatableThing, HttpUpdatableThing, and FileSystemUpdatableThing subtypes. The responsibility of your type, though, is to be a thing that is updatable—the mechanism for storage and retrieval is incidental to this purpose. Ftp, Http, and FileSystem are the things that vary here, and they belong in their own type—let’s call it UpdateMechanism. UpdateMechanism will have subclasses for the different implementations. You can then add as many update mechanisms as you want without disturbing the UpdatableThing type, which remains focused on its core responsibility.
 
 Notice also that I have replaced a static compile-time structure with a dynamic runtime arrangement here, bringing us (as if by accident) back to our first principle: “Favor composition over inheritance.”
+
+> Encapsulate the Concept that Varies
 
 _
 
