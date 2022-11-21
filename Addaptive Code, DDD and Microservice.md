@@ -1,8 +1,18 @@
 _
 
+# **Adaptive Software Life Cycle**
+# *Design, Develop, Operate, Manage and Govern Software in Agility*
+
+_
+
+<div class="page"/>
+
+_
+
 # **Adaptive Code,**
 # **Domain Driven Design (DDD) and**
 # **Microservice**
+# *Aligned with Clean Code and Clean Architecture Patterns & Principles*
 
 _
 
@@ -586,3 +596,18 @@ _
     Database Patterns
 
 > I examined some of the principles that underpin many design patterns. I looked at the use of composition to enable object combination and recombination at runtime, resulting in more flexible structures than would be available using inheritance alone. I also introduced you to decoupling, the practice of extracting software components from their context to make them more generally applicable. Finally, I reviewed the importance of interface as a means of decoupling clients from the details of implementation.
+
+<div class="page"/>
+
+_
+
+## Related Topics
+
+- Agile Management
+- DevOps
+- Containerization
+- Dashboard Design (Business Analysis)
+- System Analysis
+- System Performance
+- System Security
+- UI/UX Analysis & Design
