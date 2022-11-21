@@ -869,7 +869,12 @@ _
 
 API governance is distinct from SOA governance. API governance provides a policy-driven approach that helps to enforce standards and checkpoints throughout the API lifecycle. It encompasses not only the API runtime, but also design through development processes. It includes the guidelines, standards, and processes to be followed for API identification, interface documentation, development, testing, deployment, run, and operation. Standards and principles defined by API governance provide API quality assurance, such as security, availability, scalability, and reliability. It underpins the API enablement aspect that is critical for the successful adoption of APIs.
 
-Microservices adopt decentralized governance, these standards enable the team to efficiently build and deploy the code that has been created according to individual governance plans. The goal of decentralized governance is to free dev teams, allowing them to allocate time to solving development problems effectively within a timely manner.
+Microservices architecture allows teams to have autonomy when developing and delivering services. They can select their own runtimes, languages, tools, and processes. But these teams do not fall from the sky. There needs to be a process to identify the service requirements and then spin off the teams to work independently. 
+
+This can be the starting point of the microservices governance where there is a process to spin-off a team when a business requirement needs to be delivered as a service (specifically microservice). This can be implemented as a lifecycle in the governance platform and managed by a central team that consists of business analysts, architects, and a few developers.
+
+Once the microservices team is identified and handed over the specification to implement, it is up to the team to come up with their own tools, processes, and technologies to deliver the expected results.
+Even though microservices teams can define their own service delivery lifecycles, standards, and best practices, those need to be aligned with the overall business goals and objectives. The idea of governance in the context of microservices is not to hinder the innovation by putting a centralized management structure, rather introduce proper order via a distributed governance layer with a centralized control plane.
 
 .
 
@@ -882,6 +887,7 @@ _
 - Agile Management
 - DevOps
 - Containers Orchestration
+- Microservices Governance Framework (ie: LeanIX)
 - Clean Code
 - Clean Coder
 - Clean Architecture
@@ -911,4 +917,4 @@ _
 
 >
 
-- https://www.leanix.net/en/wiki/vsm/microservices-governance
+- https://dzone.com/articles/microservices-governance-and-api-management
