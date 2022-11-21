@@ -873,7 +873,7 @@ Microservices architecture allows teams to have autonomy when developing and del
 
 This can be the starting point of the microservices governance where there is a process to spin-off a team when a business requirement needs to be delivered as a service (specifically microservice). This can be implemented as a lifecycle in the governance platform and managed by a central team that consists of business analysts, architects, and a few developers.
 
-![Microservices Governance](https://raw.githubusercontent.com/dandisy/adaptive-code/main/ui-ux%20design.jpeg)
+![Microservices Governance](https://raw.githubusercontent.com/dandisy/adaptive-software-engineering-life-cycle/main/microservices%20governance.jpeg)
 
 Once the microservices team is identified and handed over the specification to implement, it is up to the team to come up with their own tools, processes, and technologies to deliver the expected results.
 Even though microservices teams can define their own service delivery lifecycles, standards, and best practices, those need to be aligned with the overall business goals and objectives. The idea of governance in the context of microservices is not to hinder the innovation by putting a centralized management structure, rather introduce proper order via a distributed governance layer with a centralized control plane.
