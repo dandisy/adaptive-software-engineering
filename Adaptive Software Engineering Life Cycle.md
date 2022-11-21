@@ -844,6 +844,8 @@ _
 
 # DevOps
 
+![CI/CD Pipeline](https://raw.githubusercontent.com/dandisy/adaptive-software-engineering-life-cycle/main/cicd_pipeline_infograph.png)
+
 .
 
 <div class="page"/>
@@ -854,6 +856,8 @@ _
 
 Customers today want to have access to enterprise data and services through a variety of digital devices and channels. To meet customer expectations, enterprises need to open their assets in an agile, flexible, secure, and scalable manner. APIs form the window into an enterprise’s data and services. They allow applications to easily communicate with each other using a lightweight protocol like HTTP. Developers use APIs to write applications that interact with the back-end system. Once an API has been created, it needs to be managed using an API management platform. An API management platform helps an organization publish APIs to internal, partner, and external developers to unlock 
 the unique potential of their assets. It provides the core capabilities to ensure a successful API program through developer engagement, business insights, analytics, security, and protection. An API management platform helps business accelerate outreach across digital channels, drive partner adoption, monetize digital assets, and provide analytics to optimize investments in digital transformation.
+
+![Figure 2-2 - API Management Capabilities](https://raw.githubusercontent.com/dandisy/adaptive-software-engineering-life-cycle/main/Figure%202-2%20-%20API%20Management%20Capabilities.jpeg)
 
 .
 
