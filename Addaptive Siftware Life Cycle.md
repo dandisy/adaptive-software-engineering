@@ -56,7 +56,7 @@ that enables your application to fulfill business use cases. A model is kept sep
 
 ### Applying The Strategic Patterns od Domain-Driven Design
 
-![FIGURE 1-3 - Applying The Strategic Patterns od Domain-Driven Design](https://raw.githubusercontent.com/dandisy/adaptive-software-life-cycle/main/FIGURE%201-3%20-Applying%20The%20Strategic%20Patterns%20od%20Domain-Driven%20Design.jpeg)
+![FIGURE 1-3 - Applying The Strategic Patterns of Domain-Driven Design](https://raw.githubusercontent.com/dandisy/adaptive-software-life-cycle/main/FIGURE%201-3%20-Applying%20The%20Strategic%20Patterns%20od%20Domain-Driven%20Design.jpeg)
 
 <div class="page"/>
 
@@ -79,6 +79,8 @@ that enables your application to fulfill business use cases. A model is kept sep
 ### The Binding between The Code and Analysis Model
 
 ![FIGURE 4-3 - The Binding between The Code and Analysis Model](https://raw.githubusercontent.com/dandisy/adaptive-software-life-cycle/main/FIGURE%204-3%20-%20The%20Binding%20between%20The%20Code%20and%20Analysis%20Model.jpeg)
+
+<div class="page"/>
 
 ### A Model will Grow in Complexity
 
@@ -137,6 +139,8 @@ that enables your application to fulfill business use cases. A model is kept sep
 ### The Technical Integration on A Context Map
 
 ![FIGURE 7-2 - The Technical Integration on A Context Map](https://raw.githubusercontent.com/dandisy/adaptive-software-life-cycle/main/FIGURE%207-2%20-%20The%20Technical%20Integration%20on%20A%20Context%20Map.jpeg)
+
+<div class="page"/>
 
 ### Dependency Inversion within A Layered Architecture
 
