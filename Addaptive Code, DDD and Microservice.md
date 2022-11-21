@@ -14,9 +14,35 @@ _
 # **Microservice**
 # *Aligned with Clean Code and Clean Architecture Patterns & Principles*
 
+![DDD - Strategic & Tactical Design](https://raw.githubusercontent.com/dandisy/adaptive-code/main/ddd%20-%20strategic%20and%20tactical%20design.jpeg)
+
 _
 
 <div class="page"/>
+
+    WRITING SOFTWARE IS EASY— at least if it’s greenfield software. When it comes to modifying code written by other developers or code you wrote six months ago, it can be a bit of a bore at best and a nightmare at worst. The software works, but you aren’t sure exactly how. It contains all the right frameworks and patterns, and has been created using an agile approach, but introducing new features into the codebase is harder than it should be. Even business experts aren’t helpful because the code bears no resemblance to the language they use. Working on such systems becomes a chore, leaving developers frustrated and devoid of any coding pleasure.
+
+    Domain-Driven Design (DDD) is a process that aligns your code with the reality of your problem domain. As your product evolves, adding new features becomes as easy as it was in the good old days of greenfield development. Although DDD understands the need for software patterns, principles, methodologies, and frameworks, it values developers and domain experts working together to understand domain concepts, policies, and logic equally. With a greater knowledge of the problem domain and a synergy with the business, developers are more likely to build software that is more readable and easier to adapt for future enhancement.
+
+    Following the DDD philosophy will give developers the knowledge and skills they need to tackle large or complex business systems effectively. Future enhancement requests won’t be met with an air of dread, and developers will no longer have stigma attached to the legacy application. In fact, the term legacy will be recategorized in a developer’s mind as meaning this: a system that continues to give value for the business.
+
+## Overview
+
+Before delving into the details, it’s good to take a bird’s-eye view of the philosophy so you can get a sense of what DDD is really all about.
+
+### The Problem Space
+
+Before you can develop a solution, you must understand the problem. DDD emphasizes the need to focus on the business problem domain: its terminology, the core reasons behind why the software is being developed, and what success means to the business. The need for the development team to value domain knowledge just as much as technical expertise is vital to gain a deeper insight into the problem domain and to decompose large domains into smaller subdomains.
+
+### The Solution Space
+
+When you have a sound understanding of the problem domain, strategic patterns of DDD can help you implement a technical solution in synergy with the problem space. Patterns enable core parts of your system that are crucial to the success of the product to be protected from the generic areas. Isolating integral components allows them to be modified without having a rippling effect
+throughout the system.
+
+Core parts of your product that are sufficiently complex or will frequently change should be based on a model. The tactical patterns of DDD along with Model-Driven Design will help you create a useful model of your domain in code. A model is the home to all of the domain logic
+that enables your application to fulfill business use cases. A model is kept separate from technical complexities to enable business rules and policies to evolve. A model that is in synergy with the problem domain will enable your software to be adaptable and understood by other developers and business experts.
+
+.
 
 ## Patterns Promote Design and A Common Vocabulary
 
@@ -597,11 +623,25 @@ _
 
 > I examined some of the principles that underpin many design patterns. I looked at the use of composition to enable object combination and recombination at runtime, resulting in more flexible structures than would be available using inheritance alone. I also introduced you to decoupling, the practice of extracting software components from their context to make them more generally applicable. Finally, I reviewed the importance of interface as a means of decoupling clients from the details of implementation.
 
+.
+
 <div class="page"/>
 
 _
 
-## Related Topics
+# Microservice
+
+![Microservice In Java](https://raw.githubusercontent.com/dandisy/adaptive-code/main/microserviceInJava.jpeg)
+
+![Microservice In Java](https://raw.githubusercontent.com/dandisy/adaptive-code/main/MicroservicesInJavaNew-1.webp)
+
+.
+
+<div class="page"/>
+
+_
+
+# Related Topics
 
 - Agile Management
 - DevOps
@@ -611,3 +651,4 @@ _
 - System Performance
 - System Security
 - UI/UX Analysis & Design
+![UI/UX Design](https://raw.githubusercontent.com/dandisy/adaptive-code/main/ui-ux%20design.jpeg)
