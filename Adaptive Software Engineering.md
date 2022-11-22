@@ -4,6 +4,11 @@ _
 # *Design, Develop, Operate, Manage and Governance Software in Agility*
 # *Building Digital Experience Platforms*
 
+>
+
+- https://www.youtube.com/watch?v=d_avmxN9CC0
+- https://www.youtube.com/watch?v=dwWXwLQ7Mkg
+
 _
 
 <div class="page"/>
@@ -908,14 +913,13 @@ _
 
 >
 
+- https://www.sitecore.com
 - https://pimcore.com/en/platform
 - https://pimcore.com/en/experience-management/ecommerce/features/b2b-commerce-experiences
-
->
-
+- https://www.outsystems.com
+- https://www.syncfusion.com
 - https://js.devexpress.com
 - https://www.anychart.com
-- https://www.syncfusion.com
 - https://grapesjs.com
 - https://cube.dev
 - https://www.recombee.com
@@ -928,6 +932,8 @@ _
 - https://www.youtube.com/watch?v=dwWXwLQ7Mkg
 - https://www.youtube.com/watch?v=EbUnxEx3zRY
 - https://www.youtube.com/watch?v=OBEhLpPGEXc
+- https://www.youtube.com/watch?v=0gx3hMMDOZI
+- https://www.youtube.com/watch?v=CY_nav-5iBk
 - https://www.youtube.com/watch?v=jrV-fJXAXwY
 
 .
