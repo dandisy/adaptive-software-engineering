@@ -945,9 +945,9 @@ _
 # References
 
 - Domain Driven Desgin In PHP
-- Patterns, Principles and Practices od Domain Driven Design
+- Patterns, Principles and Practices of Domain Driven Design
 - PHP Objects, Patterns and Practice
-- Api Management
+- API Management
 
 >
 
