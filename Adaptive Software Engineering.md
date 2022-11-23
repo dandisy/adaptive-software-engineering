@@ -1,7 +1,7 @@
 _
 
 # **Adaptive Software Engineering**
-# *Design, Develop, Operate, Manage and Governance Software in Agility*
+# *Design, Develop, Operate, Manage and Governance Application in Agility*
 # *Building Digital Experience Platforms*
 
 >
@@ -893,7 +893,7 @@ _
 # Related Topics
 
 - Agile Management
-- DevOps
+- DevOps and Application Life Cycle Management
 - Containers Orchestration
 - Microservices Governance Framework (ie: LeanIX)
 - Clean Code
@@ -906,7 +906,7 @@ _
 - System Analysis
 - System Performance
 - System Security
-- Data Insights and Visualization (Dashboard and Report Design)
+- Data Insights and Visualization (Dashboard Monitoring/Report Design)
 - Artifical Intelligence
 - Elastic Stack
 - Digital Experience Platforms
