@@ -848,6 +848,8 @@ So according to CAP Theorem, distributed systems should sacrifice between consis
 
 ![Microservice In Java](https://raw.githubusercontent.com/dandisy/adaptive-code/main/MicroservicesInJavaNew-1.webp)
 
+> The Small Monolith Approach, the problem with microservice from day zero
+
 .
 
 <div class="page"/>
@@ -954,9 +956,9 @@ _
 - Domain Driven Desgin In PHP
 - Patterns, Principles and Practices of Domain Driven Design
 - PHP Objects, Patterns and Practice
-- Pro Devops with Google Cloud Platform
 - Microservices Patterns
 - Spring Microservices in Action
+- Learning Microservices with Spring Boot
 - API Management
 
 >
