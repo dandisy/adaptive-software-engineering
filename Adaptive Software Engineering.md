@@ -848,7 +848,7 @@ _
 
 _
 
-# DevOps
+# DevOps and Containers Orchestration
 
 ![CI/CD Pipeline](https://raw.githubusercontent.com/dandisy/adaptive-software-engineering-life-cycle/main/cicd_pipeline_infograph.png)
 
@@ -893,22 +893,20 @@ _
 # Related Topics
 
 - Agile Management
-- DevOps and Application Life Cycle Management
-- Containers Orchestration
+- Application Life Cycle Management
+- Software Development Life Cycle
 - Microservices Governance Framework (ie: LeanIX)
 - Clean Code
 - Clean Coder
-- Clean Architecture
+- Clean Architecture (SOLID Principles and Design Patterns)
 - Patterns of Enterprise Application Architecture
 - Use Case Driven Object Modeling with UML
-- Software Development Life Cycle
-- System Architecture
-- System Analysis
+- System Analysis and Design/Architecture
 - System Performance
 - System Security
 - Data Insights and Visualization (Dashboard Monitoring/Report Design)
 - Artifical Intelligence
-- Elastic Stack
+- Elastic Stack (Logging and Monitoring)
 - Digital Experience Platforms
 - UI/UX Design
 
@@ -948,6 +946,9 @@ _
 - Domain Driven Desgin In PHP
 - Patterns, Principles and Practices of Domain Driven Design
 - PHP Objects, Patterns and Practice
+- Pro Devops with Google Cloud Platform
+- Microservices Patterns
+- Spring Microservices in Action
 - API Management
 
 >
