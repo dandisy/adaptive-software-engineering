@@ -838,6 +838,12 @@ _
 
 # Microservice
 
+![CAP](https://miro.medium.com/max/720/1*VHdxYDArFErTL4_LE0rRkw.png)
+
+So according to CAP Theorem, distributed systems should sacrifice between consistency, availability, and partition tolerance. And, any system can only guarantee two of the three concepts; consistency, availability, and partition tolerance.
+
+<div class="page"/>
+
 ![Microservice In Java](https://raw.githubusercontent.com/dandisy/adaptive-code/main/microserviceInJava.jpeg)
 
 ![Microservice In Java](https://raw.githubusercontent.com/dandisy/adaptive-code/main/MicroservicesInJavaNew-1.webp)
@@ -851,6 +857,8 @@ _
 # DevOps and Containers Orchestration
 
 ![CI/CD Pipeline](https://raw.githubusercontent.com/dandisy/adaptive-software-engineering-life-cycle/main/cicd_pipeline_infograph.png)
+
+![Container Orchestration](https://assets.website-files.com/5ff66329429d880392f6cba2/610b9c74ce12c711d0c71c31_kubernetes%20container.png)
 
 .
 
@@ -953,4 +961,6 @@ _
 
 >
 
+- https://medium.com/design-microservices-architecture-with-patterns/how-to-choose-a-database-for-microservices-cap-theorem-d1585bf40ecd
+- https://avinetworks.com/glossary/container-orchestration
 - https://dzone.com/articles/microservices-governance-and-api-management
