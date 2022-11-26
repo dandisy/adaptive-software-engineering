@@ -1,6 +1,5 @@
 # **Adaptive Software Engineering**
 ### *Design, Develop, Operate, Manage and Governance Application in Agility*
-_
 ### *Building Digital Experience Platform*
 
 _
