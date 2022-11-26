@@ -2,7 +2,7 @@ _
 
 # **Adaptive Software Engineering**
 # *Design, Develop, Operate, Manage and Governance Application in Agility*
-# *Building Digital Experience Platforms*
+# *Building Digital Experience Platform*
 
 >
 
@@ -10,7 +10,17 @@ _
 - https://www.youtube.com/watch?v=dwWXwLQ7Mkg
 - https://www.youtube.com/watch?v=CY_nav-5iBk
 
-_
+>
+
+    Design Patterns are all about reusing experience.
+
+    But a design pattern isn’t an algorithm, and it’s definitely not code. Instead, a design pattern is an approach to thinking about software design that incorporates the experience of developers who’ve had similar problems, as well as fundamental design principles that guide how we structure software designs.
+
+    But a design pattern isn’t an algorithm, and it’s definitely not code. Instead, a design pattern is an approach to thinking about software design that incorporates the experience of developers who’ve had similar problems, as well as fundamental design principles that guide how we structure software designs.
+
+> WARNING: Overuse of design patterns can lead to code that is downright over-engineered. Always go with the simplest solution that does the job and introduce patterns where and when the need emerges
+
+.
 
 <div class="page"/>
 
@@ -836,19 +846,80 @@ _
 
 _
 
+# Clean Architecture
+
+![Clean Architecture](https://miro.medium.com/max/720/1*B7LkQDyDqLN3rRSrNYkETA.jpeg)
+
+![Clean Architecture - Call Flow](https://miro.medium.com/max/640/0*-cY6zGHk2k6vpZ0M)
+
+<div class="page"/>
+
+Project Structures (An Example)
+
+Project structure can be built in several different ways. It is different from layers but it still represents the layers of Clean Architecture.
+
+    Application
+
+    - core
+        - user
+            - data
+                - dto
+                    - user_dto.dart
+                    - user_response_dto.dart
+                - datasource
+                    - user_remote_datasource.dart
+                    - user_local_datasource.dart
+                - mapper
+                    - user_mapper.dart
+                - repository
+                    - user_repository.dart
+                - di
+                    - dependency.dart
+            - domain
+                - repository
+                    - user_repository_impl.dart
+                - entity
+                    - user_entity.dart
+                - usecase
+                    - get_user_list_usecase.dart
+                    - get_user_detail_usecase.dart
+                - di
+                    - dependency.dart
+    - feature
+        - user
+            - page
+                - user_list_page.dart
+                - user_details_page.dart
+            - controller
+                - user_list_controller.dart
+                - user_details_controller.dart
+            - widget
+                - user_card_widget.dart
+
+Second example:
+
+- https://devmuaz.medium.com/flutter-clean-architecture-series-part-1-d2d4c2e75c47
+- https://medium.com/@flutterqueen/solid-principle-clean-architecture-in-flutter-app-25e416e1d130
+
+.
+
+<div class="page"/>
+
+_
+
 # Microservice
 
 ![CAP](https://miro.medium.com/max/720/1*VHdxYDArFErTL4_LE0rRkw.png)
 
 So according to CAP Theorem, distributed systems should sacrifice between consistency, availability, and partition tolerance. And, any system can only guarantee two of the three concepts; consistency, availability, and partition tolerance.
 
+> The Small Monolith Approach, the problem with microservice from day zero
+
 <div class="page"/>
 
 ![Microservice In Java](https://raw.githubusercontent.com/dandisy/adaptive-code/main/microserviceInJava.jpeg)
 
 ![Microservice In Java](https://raw.githubusercontent.com/dandisy/adaptive-code/main/MicroservicesInJavaNew-1.webp)
-
-> The Small Monolith Approach, the problem with microservice from day zero
 
 .
 
@@ -905,19 +976,18 @@ _
 - Agile Management
 - Application Life Cycle Management
 - Software Development Life Cycle
+- Distributed Application (Microservices and Kubernetes)
 - Microservices Governance Framework (ie: LeanIX)
-- Clean Code
-- Clean Coder
+- Clean Code and Clean Coder
 - Clean Architecture (SOLID Principles and Design Patterns)
 - Patterns of Enterprise Application Architecture
 - Use Case Driven Object Modeling with UML
 - System Analysis and Design/Architecture
-- System Performance
-- System Security
-- Data Insights and Visualization (Dashboard Monitoring/Report Design)
-- Artifical Intelligence
+- System Performance and System Security
+- Data Analysis, Insights and Visualization (Dashboard Monitoring/Report Design)
+- Artifical Intelligence (ie: Recommendation System)
 - Elastic Stack (Logging and Monitoring)
-- Digital Experience Platforms
+- Digital Experience Platforms and Gamification
 - UI/UX Design
 
 >
@@ -953,6 +1023,7 @@ _
 
 # References
 
+- An Engineering - Manager's Guide to Design Patterns - A Brain-Friendly Report
 - Domain Driven Desgin In PHP
 - Patterns, Principles and Practices of Domain Driven Design
 - PHP Objects, Patterns and Practice
@@ -963,6 +1034,7 @@ _
 
 >
 
+- https://medium.com/@alvaro.armijoss/improve-your-flutter-development-with-clean-architecture-and-tdd-4c13e6af4f18
 - https://medium.com/design-microservices-architecture-with-patterns/how-to-choose-a-database-for-microservices-cap-theorem-d1585bf40ecd
 - https://avinetworks.com/glossary/container-orchestration
 - https://dzone.com/articles/microservices-governance-and-api-management
