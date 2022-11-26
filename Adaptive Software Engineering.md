@@ -16,7 +16,7 @@ _
 
     But a design pattern isn’t an algorithm, and it’s definitely not code. Instead, a design pattern is an approach to thinking about software design that incorporates the experience of developers who’ve had similar problems, as well as fundamental design principles that guide how we structure software designs.
 
-    But a design pattern isn’t an algorithm, and it’s definitely not code. Instead, a design pattern is an approach to thinking about software design that incorporates the experience of developers who’ve had similar problems, as well as fundamental design principles that guide how we structure software designs.
+    But, as you’ll see, patterns are pretty abstract, it’s up to you to determine if the pattern is right for your situation and your specific problem, and once you’ve figured that out, how best to implement it.
 
 > WARNING: Overuse of design patterns can lead to code that is downright over-engineered. Always go with the simplest solution that does the job and introduce patterns where and when the need emerges
 
