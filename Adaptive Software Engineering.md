@@ -510,9 +510,7 @@ _
 
 Imagine, for example, that the Lesson system must incorporate a registration component to add new lessons to the system. As part of the registration procedure, an administrator should be notified when a lesson is added. The system’s users can’t agree whether this notification should be sent by mail or by text message. In fact, they’re so argumentative that you suspect they might want to switch to a new mode of communication in the future. What’s more, they want to be notified of all sorts of things, so that a change to the notification mode in one place will mean a similar alteration in many other places.
 
-If you’ve hard-coded calls to a Mailer class or a Texter class, then your system is tightly coupled to 
-a particular notification mode, just as it would be tightly coupled to a database platform by the use of a 
-specialized database API.
+If you’ve hard-coded calls to a Mailer class or a Texter class, then your system is tightly coupled to a particular notification mode, just as it would be tightly coupled to a database platform by the use of a specialized database API.
 
     // listing 08.12
 
@@ -941,8 +939,7 @@ _
 
 # Management
 
-Customers today want to have access to enterprise data and services through a variety of digital devices and channels. To meet customer expectations, enterprises need to open their assets in an agile, flexible, secure, and scalable manner. APIs form the window into an enterprise’s data and services. They allow applications to easily communicate with each other using a lightweight protocol like HTTP. Developers use APIs to write applications that interact with the back-end system. Once an API has been created, it needs to be managed using an API management platform. An API management platform helps an organization publish APIs to internal, partner, and external developers to unlock 
-the unique potential of their assets. It provides the core capabilities to ensure a successful API program through developer engagement, business insights, analytics, security, and protection. An API management platform helps business accelerate outreach across digital channels, drive partner adoption, monetize digital assets, and provide analytics to optimize investments in digital transformation.
+Customers today want to have access to enterprise data and services through a variety of digital devices and channels. To meet customer expectations, enterprises need to open their assets in an agile, flexible, secure, and scalable manner. APIs form the window into an enterprise’s data and services. They allow applications to easily communicate with each other using a lightweight protocol like HTTP. Developers use APIs to write applications that interact with the back-end system. Once an API has been created, it needs to be managed using an API management platform. An API management platform helps an organization publish APIs to internal, partner, and external developers to unlock the unique potential of their assets. It provides the core capabilities to ensure a successful API program through developer engagement, business insights, analytics, security, and protection. An API management platform helps business accelerate outreach across digital channels, drive partner adoption, monetize digital assets, and provide analytics to optimize investments in digital transformation.
 
 ![Figure 2-2 - API Management Capabilities](https://raw.githubusercontent.com/dandisy/adaptive-software-engineering-life-cycle/main/Figure%202-2%20-%20API%20Management%20Capabilities.jpeg)
 
@@ -962,8 +959,7 @@ This can be the starting point of the microservices governance where there is a 
 
 ![Microservices Governance](https://raw.githubusercontent.com/dandisy/adaptive-software-engineering-life-cycle/main/microservices%20governance.jpeg)
 
-Once the microservices team is identified and handed over the specification to implement, it is up to the team to come up with their own tools, processes, and technologies to deliver the expected results.
-Even though microservices teams can define their own service delivery lifecycles, standards, and best practices, those need to be aligned with the overall business goals and objectives. The idea of governance in the context of microservices is not to hinder the innovation by putting a centralized management structure, rather introduce proper order via a distributed governance layer with a centralized control plane.
+Once the microservices team is identified and handed over the specification to implement, it is up to the team to come up with their own tools, processes, and technologies to deliver the expected results. Even though microservices teams can define their own service delivery lifecycles, standards, and best practices, those need to be aligned with the overall business goals and objectives. The idea of governance in the context of microservices is not to hinder the innovation by putting a centralized management structure, rather introduce proper order via a distributed governance layer with a centralized control plane.
 
 .
 
