@@ -10,7 +10,11 @@ _
 - https://www.youtube.com/watch?v=dwWXwLQ7Mkg
 - https://www.youtube.com/watch?v=CY_nav-5iBk
 
->
+_
+
+> A digital experience platform (DXP) is a well-integrated and cohesive set of technologies designed to enable the composition, management, delivery and optimization of contextualized digital experiences across multiexperience customer journeys.
+
+_
 
     Design Patterns are all about reusing experience.
 
