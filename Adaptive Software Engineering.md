@@ -932,11 +932,11 @@ _
         - Size
         - Flexibility
 
-> Microservices are ideal for big systems
->
-> Microservice architecture is goal-oriented
->
-> Microservices are focused on replaceability
+> 
+
+    - Microservices are ideal for big systems
+    - Microservice architecture is goal-oriented
+    - Microservices are focused on replaceability
 
 ![CAP](https://miro.medium.com/max/720/1*VHdxYDArFErTL4_LE0rRkw.png)
 
@@ -968,11 +968,17 @@ Scale cube and microservices
 
 <div class="page"/>
 
+![Microservice Architecture](https://www.futurefundamentals.com/wp-content/uploads/2019/06/microservice-architecture.png)
+
+> DDD provides us successful microservices
+
+<div class="page"/>
+
 ![Microservice In Java](https://raw.githubusercontent.com/dandisy/adaptive-code/main/microserviceInJava.jpeg)
 
 ![Microservice In Java](https://raw.githubusercontent.com/dandisy/adaptive-code/main/MicroservicesInJavaNew-1.webp)
 
-> DDD provides us successful microservices
+<div class="page"/>
 
 ### Dealing with Dependencies
 
@@ -990,11 +996,16 @@ Likewise, the trick to microservice mobility is not packing everything but inste
 
 ![Figure 2-1. A maturity model for microservice architecture goals and benefits](https://raw.githubusercontent.com/dandisy/adaptive-software-engineering/main/Figure%202-1.%20A%20maturity%20model%20for%20microservice%20architecture%20goals%20and%20benefits.png)
 
+However, we need to have a solid set of guidelines on when to use the microservices architecture and when to avoid it.
+
+    - The microservices architecture is ideal when your current enterprise architecture requires modularity.
+    - If the business problem that you are trying to solve with your software application is quite simple, you may not need microservices at all (having a simple monolithic web application and a database is usually sufficient).
+    - Your software application has to embrace container-based deployment.
+    - If your system is far too complex to be segregated into microservices, you should identify the areas into which you can introduce microservices with minimal impact. Then, start implementing a small use case on microservices and build the required ecosystem components around that.
+
 <div class="page"/>
 
-### Other Topics
-
-- What to Split First?
+### What to Split First?
 
     - Decomposition by Layer
 
@@ -1007,8 +1018,8 @@ Likewise, the trick to microservice mobility is not packing everything but inste
         - Parallel Run
         - Feature Toggle
 
-- Refactoring Strategies / Spliting a monolithic to Microservices / Decomposition Strategies (Divide and Conquer)
-- Microservice Boundaries and DDD
+### Refactoring Strategies / Spliting a monolithic to Microservices / Decomposition Strategies (Divide and Conquer)
+### Microservice Boundaries and DDD
 
     - Bounded Context
     - Context Map
@@ -1025,14 +1036,26 @@ Likewise, the trick to microservice mobility is not packing everything but inste
     - Aggregate
     - Big Ball of Mud anti-pattern
 
-- Smart proxy & Dumb proxy (Smart Endpoints and Dumb Pipes)
-- Services Communication / Integration (Active Composition or Orchestration / Reactive Composition or Choreography)
+### Smart proxy & Dumb proxy (Smart Endpoints and Dumb Pipes)
+
+<div class="page"/>
+
+### Services Communication / Integration (Active Composition or Orchestration / Reactive Composition or Choreography)
 
     - Anti-Corruption Layer
     - Strangler Facade
     - Synch : REST / gRPC / GraphQL / WebSockets / Thrift
     - Asynch (Single Receiver & Multiple Receivers) / Event Bus
     - Service Mesh
+
+        - Resiliency for Inter-Service Communications
+        - Service Discovery
+        - Routing
+        - Observability
+        - Security
+        - Deployment
+        - Inter-Service Communication Protocols
+
     - Stream Processing
     - Stateless, Stateful, or Long-Running Services
     - From In-Process to Inter-Process
@@ -1040,19 +1063,21 @@ Likewise, the trick to microservice mobility is not packing everything but inste
     - Pattern: Request-Response Communication
     - Pattern: Event-Driven Communication
 
-- Anti-Patterns of Microservice Integration
+### Anti-Patterns of Microservice Integration
 
     - Monolithic API Gateway for Integrating Microservices
     - Integrating Microservice with an ESB
     - Using Homogeneous Technologies to Build all Your Microservices
 
-- Organizing Microservices 
+### Organizing Microservices 
 
     - Core Services
     - Integration Services
     - API Services
 
-- Distributed Transaction
+<div class="page"/>
+
+### Distributed Transaction
 
     - Avoiding Distributed Transactions with Two-Phase Commit
     - Publishing Events Using Local Transactions
@@ -1061,16 +1086,16 @@ Likewise, the trick to microservice mobility is not packing everything but inste
     - ACID Transactions
     - Saga
 
-- Data Management
+### Data Management
 
     - Sharing Data Between Microservices (Eliminating Shared Tables, Shared Data, Data Composition)
     - Databases are for storing data, not for business rules
     - Databases are for storing data, not to communicate events
     - Do not create entities with cyclic dependency
 
-- Polyglot Persistence
-- Caching
-- Failur Tolerance (Resilience)
+### Polyglot Persistence
+### Caching
+### Failur Tolerance (Resilience)
 
     Resilience is a measure of the capacity of a system or individual components in a system to recover quickly from a failure. In other words it is an attribute of a system that enables it to deal with failure in a way that doesn’t cause the entire system to fail.
 
@@ -1086,7 +1111,9 @@ Likewise, the trick to microservice mobility is not packing everything but inste
     - Designing for redundancy (Load Balancing and Failover)
     - Bottleneck anti-pattern
 
-- High Availability
+<div class="page"/>
+
+### High Availability
 
     Here are five things you can and should focus on when building a system to make sure that, as its use scales upwards, availability remains high:
 
@@ -1096,16 +1123,16 @@ Likewise, the trick to microservice mobility is not packing everything but inste
     - Monitor availability
     - Respond to availability issues in a predictable and defined way
 
-- High Cohesion And Loose Coupling
+### High Cohesion And Loose Coupling
 
     - Domain Coupling
     - Pass-Through Coupling
     - Common Coupling
     - Content Coupling
 
-- Information Hiding
-- Resilience
-- Observability
+### Information Hiding
+### Resilience
+### Observability
 
     - Distributed Log/Tracing
     - Data Visualization and Correlation
@@ -1114,8 +1141,11 @@ Likewise, the trick to microservice mobility is not packing everything but inste
     - Analytics Monitoring and Alerting
     - Event-Driven Log Aggregation Architecture
 
-- Automation
-- 12-Factor App
+### Automation
+
+<div class="page"/>
+
+### 12-Factor App
 
     - Codebase
     - Dependencies
@@ -1136,7 +1166,7 @@ Likewise, the trick to microservice mobility is not packing everything but inste
         - Telemetry
         - Security
 
-- Decomposition approaches
+### Decomposition approaches
 
     - Decomposing by functionality
     - Decomposing by maturity
@@ -1145,23 +1175,16 @@ Likewise, the trick to microservice mobility is not packing everything but inste
     - Pattern: Page-Based Decomposition
     - Pattern: Widget-Based Decomposition
 
-- Aggregation patterns
+### Aggregation patterns
 
     - Aggregation for a derived functionality
     - Aggregation for business intelligence
     - Aggregation for client convenience
     - Aggregation to aid system performance
 
-- Core services, Supporting services, and User-facing applications
-- Pattern: Central Aggregating Gateway
-- Pattern: Backend for Frontend (BFF)
-
-However, we need to have a solid set of guidelines on when to use the microservices architecture and when to avoid it.
-
-    - The microservices architecture is ideal when your current enterprise architecture requires modularity.
-    - If the business problem that you are trying to solve with your software application is quite simple, you may not need microservices at all (having a simple monolithic web application and a database is usually sufficient).
-    - Your software application has to embrace container-based deployment.
-    - If your system is far too complex to be segregated into microservices, you should identify the areas into which you can introduce microservices with minimal impact. Then, start implementing a small use case on microservices and build the required ecosystem components around that.
+### Core services, Supporting services, and User-facing applications
+### Pattern: Central Aggregating Gateway
+### Pattern: Backend for Frontend (BFF)
 
 .
 
@@ -1171,13 +1194,13 @@ _
 
 # DevOps and Containers Orchestration
 
-    Principles of Microservice Deployment 
+Principles of Microservice Deployment 
 
-    - Isolated Execution
-    - Focus on Automation
-    - Infrastructure as Code (IAC)
-    - Zero-Downtime Deployment
-    - Desired State Management
+- Isolated Execution
+- Focus on Automation
+- Infrastructure as Code (IAC)
+- Zero-Downtime Deployment
+- Desired State Management
 
 ![CI/CD Pipeline](https://raw.githubusercontent.com/dandisy/adaptive-software-engineering-life-cycle/main/cicd_pipeline_infograph.png)
 
@@ -1201,8 +1224,6 @@ Customers today want to have access to enterprise data and services through a va
 
 ![Figure 10-1. Components of API management](https://raw.githubusercontent.com/dandisy/adaptive-software-engineering/main/Figure%2010-1.%20Components%20of%20API%20management.png)
 
-> Microservices for the Enterprise -- Designing, Developing, and Deploying
-
 .
 
 <div class="page"/>
@@ -1219,7 +1240,7 @@ API governance is distinct from SOA governance. API governance provides a policy
 
 ### Microservices Governance
 
-    We can identify two key aspects of governance: design-time governance of services (selecting technologies, protocols, etc.) and runtime governance (service definitions, service registry and discovery, service versioning, service runtime dependencies, service ownerships and consumers, enforcing QoS, and service observerability).
+We can identify two key aspects of governance: design-time governance of services (selecting technologies, protocols, etc.) and runtime governance (service definitions, service registry and discovery, service versioning, service runtime dependencies, service ownerships and consumers, enforcing QoS, and service observerability).
 
 Microservices architecture allows teams to have autonomy when developing and delivering services. They can select their own runtimes, languages, tools, and processes. But these teams do not fall from the sky. There needs to be a process to identify the service requirements and then spin off the teams to work independently. 
 
@@ -1229,7 +1250,9 @@ This can be the starting point of the microservices governance where there is a 
 
 Once the microservices team is identified and handed over the specification to implement, it is up to the team to come up with their own tools, processes, and technologies to deliver the expected results. Even though microservices teams can define their own service delivery lifecycles, standards, and best practices, those need to be aligned with the overall business goals and objectives. The idea of governance in the context of microservices is not to hinder the innovation by putting a centralized management structure, rather introduce proper order via a distributed governance layer with a centralized control plane.
 
->
+> SLA, SLO & SLI
+
+<div class="page"/>
 
 Observability
 
@@ -1304,7 +1327,7 @@ Scaling
 
 ![Figure 6-1. Key components for the realization of microservices governance](https://raw.githubusercontent.com/dandisy/adaptive-software-engineering/main/Figure%206-1.%20Key%20components%20for%20the%20realization%20of%20microservices%20governance.png)
 
-> SLA, SLO & SLI
+<div class="page"/>
 
 Testing
 
@@ -1337,6 +1360,8 @@ Testing
     - Cross-Functional Testing
         - Performance Tests
         - Robustness Tests
+
+<div class="page"/>
 
 Security
 
