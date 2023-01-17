@@ -227,7 +227,7 @@ Procedural
         // write text parameters to $source
     }
 
->
+<div class="page"/>
 
     // listing 06.02
 
@@ -266,6 +266,8 @@ Procedural
             // write text parameters to $source
         }
     }
+
+<div class="page"/>
 
 Object-Oriented
 
@@ -359,6 +361,8 @@ Object-Oriented
     $params = $test->getAllParams();
     print_r($params);
 
+<div class="page"/>
+
 So, what can we learn from these two approaches?
 
 - Responsibility
@@ -430,8 +434,6 @@ _
 
 Program to an interface not an implementation.
 
-<div class="page"/>
-
 _
 
 ## Four Signposts
@@ -444,6 +446,8 @@ As you amend your code, it can easily drift beyond your control. A method is add
 - The Class Who Knew Too Much
 - The Jack of All Trades
 - Conditional Statements
+
+<div class="page"/>
 
 _
 
@@ -571,7 +575,7 @@ If you’ve hard-coded calls to a Mailer class or a Texter class, then your syst
         }
     }
 
->
+<div class="page"/>
 
     // listing 08.15
 
@@ -633,6 +637,8 @@ Given a type UpdatableThing, for example, you may find yourself creating FtpUpda
 Notice also that I have replaced a static compile-time structure with a dynamic runtime arrangement here, bringing us (as if by accident) back to our first principle: “Favor composition over inheritance.”
 
 > Encapsulate the Concept that Varies
+
+<div class="page"/>
 
 _
 
