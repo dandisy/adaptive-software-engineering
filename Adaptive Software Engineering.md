@@ -196,7 +196,14 @@ _
 # Objects And Design
 ## Defining Code Design
 
-One sense of code design concerns the definition of a system: the determination of a system’s requirements, scope, and objectives. What does the system need to do? For whom does it need to do it? What are the outputs of the system? Do they meet the stated need? On a lower level, design can be taken to mean the process by which you define the participants of a system and organize their relationships. This chapter is concerned with the second sense: the definition and disposition of classes and objects.
+One sense of code design concerns the definition of a system: the determination of a system’s requirements, scope, and objectives. 
+    
+    What does the system need to do? 
+    For whom does it need to do it? 
+    What are the outputs of the system? 
+    Do they meet the stated need? 
+    
+On a lower level, design can be taken to mean the process by which you define the participants of a system and organize their relationships. This section is concerned with the second sense: the definition and disposition of classes and objects.
 
 As part of the design process, you must decide when an operation should belong to a type and when it should belong to another class used by the type. Everywhere you turn, you are presented with choices, decisions that might lead to clarity and elegance or might mire you in compromise.
 
@@ -920,9 +927,9 @@ _
 
     Loosely coupled service-oriented architecture with bounded contexts.
 
-    A microservice is an independently deployable component of bounded scope that sup‐ ports interoperability through message-based communication. Microservice architec‐ ture is a style of engineering highly automated, evolvable software systems made up of capability-aligned microservices.
+    A microservice is an independently deployable component of bounded scope that supports interoperability through message-based communication. Microservice architecture is a style of engineering highly automated, evolvable software systems made up of capability-aligned microservices.
 
-    On top of everything else, today’s software architect needs to be able to “think big” when building applications. As we heard earlier in this chapter, the microservices style is rooted in the idea of solving the problems that arise when software gets too big. To build at scale means to build software that can continue to work when demand grows beyond our initial expectations. Systems that can work at scale don’t break when under pressure; instead they incorporate built-in mechanisms to increase capacity in a safe way. This added dimension requires a special perspective to build‐ ing software and is essential to the microservices way.
+    On top of everything else, today’s software architect needs to be able to “think big” when building applications. The microservices style is rooted in the idea of solving the problems that arise when software gets too big. To build at scale means to build software that can continue to work when demand grows beyond our initial expectations. Systems that can work at scale don’t break when under pressure; instead they incorporate built-in mechanisms to increase capacity in a safe way. This added dimension requires a special perspective to build‐ ing software and is essential to the microservices way.
 
     Key Concepts of Microservices
 
@@ -986,7 +993,7 @@ Another important topic related to independent deployability is embedding of dep
 
 Likewise, the trick to microservice mobility is not packing everything but instead ensuring that the deployment destination provides heavy assets, such as database clusters, in a usable and auto-discoverable form at every destination where a microservice may be deployed. Microservices should be written so that they can quickly discover those assets upon deployment and start using them.
 
-    Let’s be clear: data sharing between microservices is still the ulti‐ mate no-no. Sharing data creates tight coupling between microservices, which kills their mobility. However, sharing a database cluster installation is absolutely OK, given that each microservice only accesses isolated, namespaced portions of it.
+    Let’s be clear: data sharing between microservices is still the ultimate no-no. Sharing data creates tight coupling between microservices, which kills their mobility. However, sharing a database cluster installation is absolutely OK, given that each microservice only accesses isolated, namespaced portions of it.
 
 > Pragmatic Mobility (Our goal is to maximize deployment mobility of a microservice, which may mean different things in different contexts)
 
@@ -1008,12 +1015,9 @@ However, we need to have a solid set of guidelines on when to use the microservi
 ### What to Split First?
 
     - Decomposition by Layer
-
         - Code First
         - Data First
-
-    Useful Decompositional Patterns
-    
+    - Useful Decompositional Patterns
         - Strangler Fig Pattern 
         - Parallel Run
         - Feature Toggle
@@ -1023,7 +1027,6 @@ However, we need to have a solid set of guidelines on when to use the microservi
 
     - Bounded Context
     - Context Map
-
         - Anti-Corruption Layer
         - Shared Kernel
         - Conformist
@@ -1032,7 +1035,6 @@ However, we need to have a solid set of guidelines on when to use the microservi
         - Published Language
         - Open Host Service
         - Separate Ways
-
     - Aggregate
     - Big Ball of Mud anti-pattern
 
@@ -1047,7 +1049,6 @@ However, we need to have a solid set of guidelines on when to use the microservi
     - Synch : REST / gRPC / GraphQL / WebSockets / Thrift
     - Asynch (Single Receiver & Multiple Receivers) / Event Bus
     - Service Mesh
-
         - Resiliency for Inter-Service Communications
         - Service Discovery
         - Routing
@@ -1055,7 +1056,6 @@ However, we need to have a solid set of guidelines on when to use the microservi
         - Security
         - Deployment
         - Inter-Service Communication Protocols
-
     - Stream Processing
     - Stateless, Stateful, or Long-Running Services
     - From In-Process to Inter-Process
@@ -1161,7 +1161,6 @@ However, we need to have a solid set of guidelines on when to use the microservi
     - Logs
     - Admin Processes
     - Beyond the 12 Factor App
-
         - API First
         - Telemetry
         - Security
@@ -1370,31 +1369,24 @@ Security
 Controlling Access to a Microservice
 
     Core Principles
-
         - Principle of Least Privilege
         - Defense in Depth
         - Automation
         - Build Security into the Delivery Process
-
     The Five Functions of Cybersecurity
-
         - Identify
         - Protect
         - Detect
         - Respond
         - Recover
-
     Foundations of Application Security
-
         - Credentials
         - Patching
         - Backups
         - Rebuild
-
     Implicit Trust Versus Zero Trust
     Securing Data in Transit (Securing Service-to-Service Communication) & at Rest
     Authentication and Authorization
-
         - Service-to-Service Authentication
         - Human Authentication
         - Common Single Sign-On Implementations
