@@ -964,7 +964,7 @@ So according to CAP Theorem, distributed systems should sacrifice between consis
 
 Scale cube and microservices
 
-![Figure 1.3 The scale cube defines three separate ways to scale an application: X-axis scaling load balances requests across multiple, identical instances; Z-axis scaling routes requests based on an attribute of the request; Y-axis functionally decomposes an application into services]()
+![Figure 1.3 The scale cube defines three separate ways to scale an application: X-axis scaling load balances requests across multiple, identical instances; Z-axis scaling routes requests based on an attribute of the request; Y-axis functionally decomposes an application into services](https://raw.githubusercontent.com/dandisy/adaptive-software-engineering/main/Figure%201.3%20Scale%20cube%20and%20microservices.png)
 
 <div class="page"/>
 
@@ -988,7 +988,7 @@ Likewise, the trick to microservice mobility is not packing everything but inste
 
 ### The Microservices Value Proposition
 
-![Figure 2-1. A maturity model for microservice architecture goals and benefits]()
+![Figure 2-1. A maturity model for microservice architecture goals and benefits](https://raw.githubusercontent.com/dandisy/adaptive-software-engineering/main/Figure%202-1.%20A%20maturity%20model%20for%20microservice%20architecture%20goals%20and%20benefits.png)
 
 <div class="page"/>
 
@@ -1183,8 +1183,6 @@ _
 
 ![Container Orchestration](https://assets.website-files.com/5ff66329429d880392f6cba2/610b9c74ce12c711d0c71c31_kubernetes%20container.png)
 
-> Microservices for the Enterprise -- Designing, Developing, and Deploying
-
 .
 
 <div class="page"/>
@@ -1201,7 +1199,7 @@ Customers today want to have access to enterprise data and services through a va
 
 <div class="page"/>
 
-![Figure 10-1. Components of API management]()
+![Figure 10-1. Components of API management](https://raw.githubusercontent.com/dandisy/adaptive-software-engineering/main/Figure%2010-1.%20Components%20of%20API%20management.png)
 
 > Microservices for the Enterprise -- Designing, Developing, and Deploying
 
@@ -1304,21 +1302,13 @@ Scaling
     Autoscaling
     Starting Again
 
-> Microservices for the Enterprise -- Designing, Developing, and Deploying
-
-![Figure 6-1. Key components for the realization of microservices governance]()
+![Figure 6-1. Key components for the realization of microservices governance](https://raw.githubusercontent.com/dandisy/adaptive-software-engineering/main/Figure%206-1.%20Key%20components%20for%20the%20realization%20of%20microservices%20governance.png)
 
 > SLA, SLO & SLI
 
-.
+Testing
 
-<div class="page"/>
-
-_
-
-# Testing
-
-![Testing]()
+![Testing](https://raw.githubusercontent.com/dandisy/adaptive-software-engineering/main/testing.jpeg)
 
     - Types of Tests
     - Test Scope
@@ -1348,15 +1338,9 @@ _
         - Performance Tests
         - Robustness Tests
 
-.
+Security
 
-<div class="page"/>
-
-_
-
-# Security
-
-![Security]()
+![Security](https://raw.githubusercontent.com/dandisy/adaptive-software-engineering/main/security.jpeg)
 
 Controlling Access to a Microservice
 
