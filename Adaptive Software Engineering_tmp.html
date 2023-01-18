@@ -1,0 +1,1567 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Adaptive Software Engineering.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<p>_</p>
+<h1 id="adaptive-software-engineering"><strong>Adaptive Software Engineering</strong></h1>
+<h1 id="design-develop-operate-manage-and-governance-application-in-agility"><em>Design, Develop, Operate, Manage and Governance Application in Agility</em></h1>
+<h1 id="building-digital-experience-platform"><em>Building Digital Experience Platform</em></h1>
+<blockquote></blockquote>
+<ul>
+<li>https://www.youtube.com/watch?v=d_avmxN9CC0</li>
+<li>https://www.youtube.com/watch?v=dwWXwLQ7Mkg</li>
+<li>https://www.youtube.com/watch?v=CY_nav-5iBk</li>
+</ul>
+<p>_</p>
+<blockquote>
+<p>A digital experience platform (DXP) is a well-integrated and cohesive set of technologies designed to enable the composition, management, delivery and optimization of contextualized digital experiences across multiexperience customer journeys.</p>
+</blockquote>
+<p>_</p>
+<pre><code>Design Patterns are all about reusing experience.
+
+But a design pattern isn’t an algorithm, and it’s definitely not code. Instead, a design pattern is an approach to thinking about software design that incorporates the experience of developers who’ve had similar problems, as well as fundamental design principles that guide how we structure software designs.
+
+But, as you’ll see, patterns are pretty abstract, it’s up to you to determine if the pattern is right for your situation and your specific problem, and once you’ve figured that out, how best to implement it.
+</code></pre>
+<blockquote>
+<p>WARNING: Overuse of design patterns can lead to code that is downright over-engineered. Always go with the simplest solution that does the job and introduce patterns where and when the need emerges</p>
+</blockquote>
+<p>.</p>
+<div class="page">
+</div><p>_</p>
+<h1 id="adaptive-code"><strong>Adaptive Code,</strong></h1>
+<h1 id="domain-driven-design-ddd-and"><strong>Domain Driven Design (DDD) and</strong></h1>
+<h1 id="microservice"><strong>Microservice</strong></h1>
+<h1 id="aligned-with-clean-code-and-clean-architecture-patterns--principles"><em>Aligned with Clean Code and Clean Architecture Patterns &amp; Principles</em></h1>
+<p><img src="https://raw.githubusercontent.com/dandisy/adaptive-software-engineering-life-cycle/main/ddd%20-%20strategic%20and%20tactical%20design%201.jpeg" alt="DDD - Strategic &amp; Tactical Design"></p>
+<div class="page">
+</div><pre><code>Why Domain-Driven Design Matters.
+
+Software is not just about code. If you think about it, code is rarely the end goal of our profession. Code is just the medium to solve business problems. So why does it have to talk a different language? Domain-Driven Design emphasizes making sure businesses and software speak the same language. Once broken the barrier, there is no need for translations or tedious syncing, information doesn't get lost. Everyone contributes to discovering the Business Domain, not just coders. The resulting software is the only truth for the common language.
+
+Domain-Driven Design it also provides a framework for strategic and tactical design — strategic to pinpoint the most important areas to develop based on business value, and tactical to build a working Domain Model of battle-tested building blocks and patterns.
+</code></pre>
+<blockquote></blockquote>
+<pre><code>WRITING SOFTWARE IS EASY— at least if it’s greenfield software. When it comes to modifying code written by other developers or code you wrote six months ago, it can be a bit of a bore at best and a nightmare at worst. The software works, but you aren’t sure exactly how. It contains all the right frameworks and patterns, and has been created using an agile approach, but introducing new features into the codebase is harder than it should be. Even business experts aren’t helpful because the code bears no resemblance to the language they use. Working on such systems becomes a chore, leaving developers frustrated and devoid of any coding pleasure.
+
+Domain-Driven Design (DDD) is a process that aligns your code with the reality of your problem domain. As your product evolves, adding new features becomes as easy as it was in the good old days of greenfield development. Although DDD understands the need for software patterns, principles, methodologies, and frameworks, it values developers and domain experts working together to understand domain concepts, policies, and logic equally. With a greater knowledge of the problem domain and a synergy with the business, developers are more likely to build software that is more readable and easier to adapt for future enhancement.
+
+Following the DDD philosophy will give developers the knowledge and skills they need to tackle large or complex business systems effectively. Future enhancement requests won’t be met with an air of dread, and developers will no longer have stigma attached to the legacy application. In fact, the term legacy will be recategorized in a developer’s mind as meaning this: a system that continues to give value for the business.
+</code></pre>
+<div class="page">
+</div><pre><code>Considering Domain-Driven Design.
+
+Domain-Driven Design is not a silver bullet; as with everything in software, it depends on the context. As a rule of thumb, use it to simplify your Domain, but never to add more complexity.
+
+If your application is data-centric and your use cases mainly manipulate rows in a database and perform CRUD operations — that is, Create, Read, Update, and Delete — you don't need Domain-Driven Design. Instead, the only thing your company needs is a fancy face in front of your database.
+
+If your application has less than 30 use cases, it might be simpler to use a framework like Symfony or Laravel to handle your business logic.
+
+However, if your application has more than 30 use cases, your system may be moving toward the dreaded Big Ball of Mud. If you know for sure your system will grow in complexity, you should consider using Domain-Driven Design to fight that complexity.
+
+If you know your application is going to grow and is likely to change often, Domain-Driven Design will definitely help in managing the complexity and refactoring your model over time.
+
+If you don't understand the Domain you're working on because it's new and nobody has invested in a solution before, this might mean it's complex enough for you to start applying Domain-Driven Design. In this case, you'll need to work closely with Domain Experts to get the models right.
+</code></pre>
+<blockquote>
+<p>More importantly, Domain-Driven Design is not about technology. Instead, it's about developing knowledge around business and using technology to provide value. Only once you're capable of understanding the business your company works within will you be able to participate in the software model discovery process to produce a Ubiquitous Language.</p>
+</blockquote>
+<div class="page">
+</div><p>_</p>
+<h2 id="from-object-basics-through-design-pattern-principles">From object basics through design pattern principles</h2>
+<p>_</p>
+<pre><code>- Advocacy and Agnosticism: The Object Debate.
+
+    Many excellent programmers have produced excellent code for years without using objects. One core difference between object-oriented and procedural code can be found in the way that responsibility is distributed. Procedural code Takes the form of a sequential series of commands and method calls. The controlling code tends to take responsibility for handling differing conditions. This top-down control can result in the development of duplications and dependencies across a project. Object-oriented code Tries to minimize these dependencies by moving responsibility for handling tasks away from client code and toward the objects in the system.
+</code></pre>
+<blockquote></blockquote>
+<pre><code>- Patterns Promote Design and A Common Vocabulary.
+
+    Although I’m an inveterate reinventor of wheels, the thrust of my argument is not that we should all throw away our frameworks and build MVC applications from scratch (at least not always). It is rather that, as developers, we should understand the problems that frameworks solve, and the strategies they use to solve them. We should be able to evaluate frameworks not only functionally but in terms of the design decisions their creators have made, and to judge the quality of their implementations. And yes, when the conditions are right, we should go ahead and build our own spare and focused applications, and, over time, compile our own libraries of reusable code.
+</code></pre>
+<p>.</p>
+<div class="page">
+</div><p>_</p>
+<h1 id="object-basics">Object Basics</h1>
+<h2 id="inheritance">Inheritance</h2>
+<p>The Inheritance Problem</p>
+<pre><code>// listing 03.30
+
+class ShopProduct
+{
+    public $numPages;
+    public $playLength;
+    public $title;
+    public $producerMainName;
+    public $producerFirstName;
+    public $price;
+
+    public function __construct(
+        string $title,
+        string $firstName,
+        string $mainName,
+        float $price,
+        int $numPages = 0,
+        int $playLength = 0
+    ) {
+        $this-&gt;title = $title;
+        $this-&gt;producerFirstName = $firstName;
+        $this-&gt;producerMainName = $mainName;
+        $this-&gt;price = $price;
+        $this-&gt;numPages = $numPages;
+        $this-&gt;play
+    }
+    
+    public function getNumberOfPages()
+    {
+        return $this-&gt;numPages;
+    }
+
+    public function getPlayLength()
+    {
+        return $this-&gt;playLength;
+    }
+
+    public function getProducer()
+    {
+        return $this-&gt;producerFirstName . &quot; &quot;
+        . $this-&gt;producerMainName;
+    }
+}
+</code></pre>
+<p>So forcing fields that don’t belong together into a single class leads to bloated objects with redundant properties and methods.</p>
+<p>Consider a method that summarizes a product</p>
+<pre><code>// listing 03.31
+
+public function getSummaryLine()
+{
+    $base = &quot;{$this-&gt;title} ( {$this-&gt;producerMainName}, &quot;;
+    $base .= &quot;{$this-&gt;producerFirstName} )&quot;;
+    if ($this-&gt;type == 'book') {
+        $base .= &quot;: page count - {$this-&gt;numPages}&quot;;
+    } elseif ($this-&gt;type == 'cd') {
+        $base .= &quot;: playing time - {$this-&gt;playLength}&quot;;
+    }
+    return $base;
+}
+</code></pre>
+<p>As ShopProduct is beginning to feel like two classes in one, I could accept this and create two types rather than one.</p>
+<div class="page">
+</div><p>Consider with the ShopProductWriter class? Its write() method is designed to work with a single type: ShopProduct</p>
+<pre><code>// listing 03.34
+
+class ShopProductWriter
+{
+    public function write($shopProduct)
+    {
+        if (
+            ! ($shopProduct instanceof CdProduct) &amp;&amp;
+            ! ($shopProduct instanceof BookProduct)
+        ) {
+            die(&quot;wrong type supplied&quot;);
+        }
+        $str = &quot;{$shopProduct-&gt;title}: &quot;
+            . $shopProduct-&gt;getProducer()
+            . &quot; ({$shopProduct-&gt;price})\n&quot;;
+        print $str;
+    }
+}
+</code></pre>
+<p>.</p>
+<div class="page">
+</div><p>_</p>
+<h1 id="objects-and-design">Objects And Design</h1>
+<h2 id="defining-code-design">Defining Code Design</h2>
+<p>One sense of code design concerns the definition of a system: the determination of a system’s requirements, scope, and objectives.</p>
+<pre><code>What does the system need to do? 
+For whom does it need to do it? 
+What are the outputs of the system? 
+Do they meet the stated need? 
+</code></pre>
+<p>On a lower level, design can be taken to mean the process by which you define the participants of a system and organize their relationships. This section is concerned with the second sense: the definition and disposition of classes and objects.</p>
+<p>As part of the design process, you must decide when an operation should belong to a type and when it should belong to another class used by the type. Everywhere you turn, you are presented with choices, decisions that might lead to clarity and elegance or might mire you in compromise.</p>
+<p>_</p>
+<h2 id="object-oriented-and-procedural-programming">Object-Oriented and Procedural Programming</h2>
+<p>Procedural</p>
+<pre><code>// listing 06.01
+
+function readParams(string $source): array
+{
+    $params = [];
+    // read text parameters from $source
+    return $params;
+}
+
+function writeParams(array $params, string $source)
+{
+    // write text parameters to $source
+}
+</code></pre>
+<div class="page">
+</div><pre><code>// listing 06.02
+
+$file = __DIR__ . &quot;/params.txt&quot;;
+$params = [
+    &quot;key1&quot; =&gt; &quot;val1&quot;,
+    &quot;key2&quot; =&gt; &quot;val2&quot;,
+    &quot;key3&quot; =&gt; &quot;val3&quot;,
+];
+writeParams($params, $file);
+$output = readParams($file);
+print_r($output);
+</code></pre>
+<blockquote></blockquote>
+<pre><code>// listing 06.03
+
+function readParams(string $source): array
+{
+    $params = [];
+
+    if (preg_match(&quot;/\.xml$/i&quot;, $source)) {
+        // read XML parameters from $source
+    } else {
+        // read text parameters from $source
+    }
+
+    return $params;
+}
+    
+function writeParams(array $params, string $source)
+{
+    if (preg_match(&quot;/\.xml$/i&quot;, $source)) {
+        // write XML parameters to $source
+    } else {
+        // write text parameters to $source
+    }
+}
+</code></pre>
+<div class="page">
+</div><p>Object-Oriented</p>
+<pre><code>// listing 06.04
+
+abstract class ParamHandler
+{
+    protected $source;
+    protected $params = [];
+
+    public function __construct(string $source)
+    {
+        $this-&gt;source = $source;
+    }
+
+    public function addParam(string $key, string $val)
+    {
+        $this-&gt;params[$key] = $val;
+    }
+
+    public function getAllParams(): array
+    {
+        return $this-&gt;params;
+    }
+
+    public static function getInstance(string $filename): ParamHandler
+    {
+        if (preg_match(&quot;/\.xml$/i&quot;, $filename)) {
+            return new XmlParamHandler($filename);
+        }
+        return new TextParamHandler($filename);
+    }
+
+    abstract public function write(): bool;
+    abstract public function read(): bool;
+}
+</code></pre>
+<blockquote></blockquote>
+<pre><code>// listing 06.05
+
+class XmlParamHandler extends ParamHandler
+{
+    public function write(): bool
+    {
+        // write XML
+        // using $this-&gt;params
+    }
+
+    public function read(): bool
+    {
+        // read XML
+        // and populate $this-&gt;params
+    }
+}
+</code></pre>
+<blockquote></blockquote>
+<pre><code>// listing 06.06
+
+class TextParamHandler extends ParamHandler
+{
+    public function write(): bool
+    {
+        // write text
+        // using $this-&gt;params
+    }
+
+    public function read(): bool
+    {
+        // read text
+        // and populate $this-&gt;params
+    }
+}
+</code></pre>
+<blockquote></blockquote>
+<pre><code>// listing 06.07
+
+$test = ParamHandler::getInstance(__DIR__ . &quot;/params.xml&quot;);
+$test-&gt;addParam(&quot;key1&quot;, &quot;val1&quot;);
+$test-&gt;addParam(&quot;key2&quot;, &quot;val2&quot;);
+$test-&gt;addParam(&quot;key3&quot;, &quot;val3&quot;);
+$test-&gt;write(); // writing in XML format
+</code></pre>
+<blockquote></blockquote>
+<pre><code>// listing 06.08
+$test = ParamHandler::getInstance(__DIR__ . &quot;/params.txt&quot;);
+$test-&gt;read(); // reading in text format
+$params = $test-&gt;getAllParams();
+print_r($params);
+</code></pre>
+<div class="page">
+</div><p>So, what can we learn from these two approaches?</p>
+<ul>
+<li>
+<p>Responsibility</p>
+<p>The controlling code in the procedural example takes responsibility for deciding about format—not once, but twice. The conditional code is tidied away into functions, certainly, but this merely disguises the fact of a single flow, making decisions as it goes. Calls to readParams() and to writeParams() take place in different contexts, so we are forced to repeat the file extension test in each function (or to perform variations on this test).</p>
+<p>In the object-oriented version, this choice about file format is made in the static getInstance() method, which tests the file extension only once, serving up the correct subclass. The client code takes no responsibility for implementation. It uses the provided object with no knowledge of, or interest in, the particular subclass it belongs to. It knows only that it is working with a ParamHandler object, and that it will support write() and read(). While the procedural code busies itself about details, the object-oriented code works only with an interface, unconcerned about the details of implementation. Because responsibility for implementation lies with the objects and not with the client code, it would be easy to switch in support for new formats transparently.</p>
+</li>
+<li>
+<p>Cohesion</p>
+<p>Cohesion is the extent to which proximate procedures are related to one another. Ideally, you should create components that share a clear responsibility. If your code spreads related routines widely, you will find them harder to maintain as you have to hunt around to make changes.</p>
+<p>Our ParamHandler classes collect related procedures into a common context. The methods for working with XML share a context in which they can share data and where changes to one method can easily be reflected in another if necessary (e.g., if you needed to change an XML element name). The ParamHandler classes can therefore be said to have high cohesion.</p>
+<p>The procedural example, on the other hand, separates related procedures. The code for working with XML is spread across functions.</p>
+</li>
+<li>
+<p>Coupling</p>
+<p>Tight coupling occurs when discrete parts of a system’s code are tightly bound up with one another so that a change in one part necessitates changes in the others. Tight coupling is by no means unique to procedural code, though the sequential nature of such code makes it prone to the problem.</p>
+<p>You can see this kind of coupling in the procedural example. The writeParams() and readParams() functions run the same test on a file extension to determine how they should work with data. Any change in logic you make to one will have to be implemented in the other. If you were to add a new format, for example, you would have to bring the functions into line with one another, so that they both implement a new file extension test in the same way. This problem can only get worse as you add new parameter-related functions.</p>
+<p>The object-oriented example decouples the individual subclasses from one another and from the client code. If you were required to add a new parameter format, you could simply create a new subclass, amending a single test in the static getInstance() method.</p>
+</li>
+<li>
+<p>Orthogonality</p>
+<p>The killer combination of components with tightly defined responsibilities that are also independent from the wider system is sometimes referred to as orthogonality.</p>
+<p>Orthogonality, it is argued, promotes reuse in that components can be plugged into new systems without needing any special configuration. Such components will have clear inputs and outputs, independent of any wider context. Orthogonal code makes change easier because the impact of altering an implementation will be localized to the component being altered. Finally, orthogonal code is safer. The effects of bugs should be limited in scope. An error in highly interdependent code can easily cause knock-on effects in the wider system.</p>
+<p>There is nothing automatic about loose coupling and high cohesion in a class context. We could, after all, embed our entire procedural example into one misguided class. So how can we achieve this balance in our code? I usually start by considering the classes that should live in my system.</p>
+</li>
+</ul>
+<p>_</p>
+<h2 id="choosing-your-classes">Choosing Your Classes</h2>
+<p>It can be surprisingly difficult to define the boundaries of your classes, especially as they will evolve with any system that you build.</p>
+<p>It can seem straightforward when you are modeling the real world. Object-oriented systems often feature software representations of real things—Person, Invoice, and Shop classes abound. This would seem to suggest that defining a class is a matter of finding the things in your system and then giving them agency through methods. This is not a bad starting point, but it does have its dangers. If you see a class as a noun, a subject for any number of verbs, then you may find it bloating as ongoing development and requirement changes call for it to do more and more things.</p>
+<p>How should you think about defining classes? The best approach is to think of a class as having a primary responsibility and to make that responsibility as singular and focused as possible. Put the responsibility into words. It has been said that you should be able to describe a class’s responsibility in 25 words or less, rarely using the words “and” or “or.” If your sentence gets too long or mired in clauses, it is probably time to consider defining new classes along the lines of some of the responsibilities you have described.</p>
+<p>_</p>
+<h2 id="polymorphism">Polymorphism</h2>
+<p>Polymorphism, or class switching.</p>
+<p>Polymorphism is the maintenance of multiple implementations behind a common interface. This sounds complicated, but in fact, it should be very familiar to you by now. The need for polymorphism is often signaled by the presence of extensive conditional statements in your code.</p>
+<p>It is important to note that polymorphism doesn’t banish conditionals. Methods such as ParamHandler::getInstance() will often determine which objects to return based on switch or if statements. These tend to centralize the conditional code into one place, though.</p>
+<p>_</p>
+<h2 id="encapsulation">Encapsulation</h2>
+<p>The hiding of data and functionality from a client.</p>
+<p>Encapsulation is, in some ways, the key to object-oriented programming. Your objective should be to make each part as independent as possible from its peers. Classes and methods should receive as much information as is necessary to perform their allotted tasks, which should be limited in scope and clearly identified.</p>
+<p>Encapsulation is a technique that should be observed equally by classes and their clients.</p>
+<p>Polymorphism illustrates another kind of encapsulation. By placing different implementations behind a common interface, you hide these underlying strategies from the client. This means that any changes that are made behind this interface are transparent to the wider system. You can add new classes or change the code in a class without causing errors. The interface is what matters, not the mechanisms working beneath it. The more independent these mechanisms are kept, the less chance that changes or repairs will have a knock-on effect in your projects.</p>
+<p>_</p>
+<h2 id="forget-how-to-do-it">Forget How to Do It</h2>
+<p>Program to an interface not an implementation.</p>
+<p>_</p>
+<h2 id="four-signposts">Four Signposts</h2>
+<p>Very few people get it absolutely right at the design stage. Most of us amend our code as requirements change or as we gain a deeper understanding of the nature of the problem we are addressing.</p>
+<p>As you amend your code, it can easily drift beyond your control. A method is added here and a new class there, and gradually your system begins to decay. As you have seen already, your code can point the way to its own improvement. These pointers in code are sometimes referred to as code smells—that is, features in code that may suggest particular fixes or at least call you to look again at your design.</p>
+<ul>
+<li>Code Duplication</li>
+<li>The Class Who Knew Too Much</li>
+<li>The Jack of All Trades</li>
+<li>Conditional Statements</li>
+</ul>
+<div class="page">
+</div><p>_</p>
+<h2 id="the-uml">The UML</h2>
+<ul>
+<li>
+<p>Class Diagrams</p>
+<p>Aggregation and composition are similar to association. All describe a situation in which a class holds a permanent reference to one or more instances of another. With aggregation and composition, though, the referenced instances form an intrinsic part of the referring object.</p>
+<p>In the case of aggregation, the contained objects are a core part of the container, but they can also be contained by other objects at the same time. The aggregation relationship is illustrated by a line that begins with an unfilled diamond.</p>
+<p>Composition represents an even stronger relationship than this. In composition, the contained object can be referenced by its container only. It should be deleted when the container is deleted. Composition relationships are depicted in the same way as aggregation relationships, except that the diamond should be filled.</p>
+</li>
+<li>
+<p>Sequence Diagrams</p>
+</li>
+</ul>
+<p>.</p>
+<div class="page">
+</div><p>_</p>
+<h1 id="patterns">Patterns</h1>
+<h2 id="why-use-design-patterns">Why Use Design Patterns?</h2>
+<ul>
+<li>A Design Pattern Defines a Problem</li>
+<li>A Design Pattern Defines a Solution</li>
+<li>Design Patterns Are Language Independent</li>
+<li>Patterns Define a Vocabulary</li>
+<li>Patterns Are Tried and Tested</li>
+<li>Patterns Are Designed for Collaboration</li>
+<li>Design Patterns Promote Good Design</li>
+<li>Design Patterns are Used By Popular Frameworks</li>
+</ul>
+<p><img src="https://www.modernescpp.com/images/blog/Patterns/Classification/GoFOverview.jpg" alt="GoF Design Patterns"></p>
+<p>.</p>
+<div class="page">
+</div><p>_</p>
+<h1 id="some-pattern-principles">Some Pattern Principles</h1>
+<ul>
+<li>https://en.wikipedia.org/wiki/SOLID</li>
+<li>https://en.wikipedia.org/wiki/Adaptive_software_development</li>
+</ul>
+<p>The Gang of Four boiled this down into a principle: “favor composition over inheritance.” The patterns described ways in which objects could be combined at runtime to achieve a level of flexibility relationship impossible in an inheritance tree alone.</p>
+<p>_</p>
+<h2 id="composition-and-inheritance">Composition and Inheritance</h2>
+<p>Inheritance is a powerful way of designing for changing circumstances or contexts. It can limit flexibility, however, especially when classes take on multiple responsibilities.</p>
+<p><img src="https://raw.githubusercontent.com/dandisy/adaptive-code/main/Figure%208-1.%20A%20parent%20class%20and%20two%20child%20clases.jpeg" alt="Figure 8-1. A parent class and two child classes"></p>
+<p><img src="https://raw.githubusercontent.com/dandisy/adaptive-code/main/Figure%208-2.%20A%20poor%20inheritance%20structure.jpeg" alt="Figure 8-2. A poor inheritance structure"></p>
+<p><img src="https://raw.githubusercontent.com/dandisy/adaptive-code/main/Figure%208-3.%20Inheritance%20hierarchy%20improved%20by%20removing%20cost%20calculations%20from%20subclasses.jpeg" alt="Figure 8-3. Inheritance hierarchy improved by removing cost calculations from subclasses"></p>
+<p><img src="https://raw.githubusercontent.com/dandisy/adaptive-code/main/Figure%208-4.%20Moving%20algorithms%20into%20a%20separate%20type.jpeg" alt="Figure 8-4. Moving algorithms into a separate type"></p>
+<div class="page">
+</div><p>_</p>
+<h2 id="decoupling">Decoupling</h2>
+<p>That it makes sense to build independent components. A system with highly interdependent classes can be hard to maintain. A change in one location can require a cascade of related changes across the system.</p>
+<p>Reusability is one of the key objectives of object-oriented design, and tight coupling is its enemy. You can diagnose tight coupling when you see that a change to one component of a system necessitates many changes elsewhere. You should aspire to create independent components, so that you can make changes without a domino effect of unintended consequences. When you alter a component, the extent to which it is independent is related to the likelihood that your changes will cause other parts of your system to fail.</p>
+<p>The problem comes when such code is scattered throughout a project. For example: talking to databases is not the primary responsibility of most classes in a system, so the best strategy is to extract such code and group it together behind a common interface. In this way, you promote the independence of your classes. At the same time, by concentrating your gateway code in one place, you make it much easier to switch to a new platform without disturbing your wider system. This process, the hiding of implementation behind a clean interface, is known as encapsulation.</p>
+<p><img src="https://raw.githubusercontent.com/dandisy/adaptive-code/main/Figure%208-5.%20The%20DBAL%20package%20decouples%20client%20code%20from%20database%20objects.jpeg" alt="Figure 8-5. The DBAL package decouples client code from database objects"></p>
+<p>_</p>
+<h2 id="loosening-your-coupling">Loosening Your Coupling</h2>
+<p>Imagine, for example, that the Lesson system must incorporate a registration component to add new lessons to the system. As part of the registration procedure, an administrator should be notified when a lesson is added. The system’s users can’t agree whether this notification should be sent by mail or by text message. In fact, they’re so argumentative that you suspect they might want to switch to a new mode of communication in the future. What’s more, they want to be notified of all sorts of things, so that a change to the notification mode in one place will mean a similar alteration in many other places.</p>
+<p>If you’ve hard-coded calls to a Mailer class or a Texter class, then your system is tightly coupled to a particular notification mode, just as it would be tightly coupled to a database platform by the use of a specialized database API.</p>
+<pre><code>// listing 08.12
+
+class RegistrationMgr
+{
+    public function register(Lesson $lesson)
+    {
+        // do something with this Lesson
+        // now tell someone
+        $notifier = Notifier::getNotifier();
+        $notifier-&gt;inform(&quot;new lesson: cost ({$lesson-&gt;cost()})&quot;);
+    }
+}
+</code></pre>
+<blockquote></blockquote>
+<pre><code>// listing 08.13
+
+abstract class Notifier
+{
+    public static function getNotifier(): Notifier
+    {
+        // acquire concrete class according to
+        // configuration or other logic
+        if (rand(1, 2) === 1) {
+            return new MailNotifier();
+        } else {
+            return new TextNotifier();
+        }
+    }
+
+    abstract public function inform($message);
+}
+</code></pre>
+<blockquote></blockquote>
+<pre><code>// listing 08.14
+
+class MailNotifier extends Notifier
+{
+    public function inform($message)
+    {
+        print &quot;MAIL notification: {$message}\n&quot;;
+    }
+}
+</code></pre>
+<div class="page">
+</div><pre><code>// listing 08.15
+
+class TextNotifier extends Notifier
+{
+    public function inform($message)
+    {
+        print &quot;TEXT notification: {$message}\n&quot;;
+    }
+}
+</code></pre>
+<blockquote></blockquote>
+<pre><code>// listing 08.16
+
+$lessons1 = new Seminar(4, new TimedCostStrategy());
+$lessons2 = new Lecture(4, new FixedCostStrategy());
+$mgr = new RegistrationMgr();
+$mgr-&gt;register($lessons1);
+$mgr-&gt;register($lessons2);
+</code></pre>
+<p><img src="https://raw.githubusercontent.com/dandisy/adaptive-code/main/Figure%208-6.%20The%20Notifier%20class%20separates%20client%20code%20from%20Notifier%20implementations.jpeg" alt="Figure 8-6. The Notifier class separates client code from Notifier implementations"></p>
+<p>_</p>
+<h2 id="code-to-an-interface-not-to-an-implementation">Code to an Interface, Not to an Implementation</h2>
+<p>Client code can then require an object of the superclass’s type rather than that of an implementing class, unconcerned by the specific implementation it is actually getting.</p>
+<p>Parallel conditional statements, like the ones I rooted out from Lesson::cost() and Lesson::chargeType(), are a common sign that polymorphism is needed. They make code hard to maintain because a change in one conditional expression necessitates a change in its siblings. Conditional statements are occasionally said to implement a “simulated inheritance.”</p>
+<p>By placing the cost algorithms in separate classes that implement CostStrategy, I remove duplication. I also make it much easier should I need to add new cost strategies in the future.</p>
+<p>From the perspective of client code, it is often a good idea to require abstract or general types in your methods’ parameters. By requiring more specific types, you could limit the flexibility of your code at runtime.</p>
+<p>Having said that, of course, the level of generality you choose in your argument hints is a matter of judgment. Make your choice too general, and your method may become less safe. If you require the specific functionality of a subtype, then accepting a differently equipped sibling into a method could be risky.</p>
+<p>Still, make your choice of argument hint too restricted, and you lose the benefits of polymorphism.</p>
+<p>_</p>
+<h2 id="the-concept-that-varies">The Concept that Varies</h2>
+<p>It’s easy to interpret a design decision once it has been made, but how do you decide where to start?</p>
+<p>The Gang of Four recommend that you actively seek varying elements in your classes and assess their suitability for encapsulation in a new type. Each alternative in a suspect conditional may be extracted to form a class that extends a common abstract parent. This new type can then be used by the class or classes from which it was extracted. This has the following effects:</p>
+<ul>
+<li>Focusing responsibility</li>
+<li>Promoting flexibility through composition</li>
+<li>Making inheritance hierarchies more compact and focused</li>
+<li>Reducing duplication</li>
+</ul>
+<p>So how do you spot variation? One sign is the misuse of inheritance. This might include inheritance deployed according to multiple forces at one time (e.g., lecture/seminar and fixed/timed cost). It might also include subclassing on an algorithm where the algorithm is incidental to the core responsibility of the type. The other sign of variation suitable for encapsulation is, as you have seen, a conditional expression.</p>
+<p>If you find that you are drowning in subclasses, it may be that you should be extracting the reason for all this subclassing into its own type. This is particularly the case if the reason is to achieve an end that is incidental to your type’s main purpose.</p>
+<p>Given a type UpdatableThing, for example, you may find yourself creating FtpUpdatableThing, HttpUpdatableThing, and FileSystemUpdatableThing subtypes. The responsibility of your type, though, is to be a thing that is updatable—the mechanism for storage and retrieval is incidental to this purpose. Ftp, Http, and FileSystem are the things that vary here, and they belong in their own type—let’s call it UpdateMechanism. UpdateMechanism will have subclasses for the different implementations. You can then add as many update mechanisms as you want without disturbing the UpdatableThing type, which remains focused on its core responsibility.</p>
+<p>Notice also that I have replaced a static compile-time structure with a dynamic runtime arrangement here, bringing us (as if by accident) back to our first principle: “Favor composition over inheritance.”</p>
+<blockquote>
+<p>Encapsulate the Concept that Varies</p>
+</blockquote>
+<div class="page">
+</div><p>_</p>
+<h2 id="patternitis">Patternitis</h2>
+<p>One problem for which there is no pattern is the unnecessary or inappropriate use of patterns. This has earned patterns a bad name in some quarters. Because pattern solutions are neat, it is tempting to apply them wherever you see a fit, whether they truly fulfill a need or not.</p>
+<p>The eXtreme Programming (XP) methodology offers a couple of principles that might apply here. The first is, “You aren’t going to need it” (often abbreviated to YAGNI). This is generally applied to application features, but it also makes sense for patterns.</p>
+<blockquote>
+<p>Do the simplest thing that works.</p>
+</blockquote>
+<p>_</p>
+<h2 id="the-patterns">The Patterns</h2>
+<pre><code>Patterns for Generating Objects
+Patterns for Organizing Objects and Classes
+Task-Oriented Patterns
+Enterprise Patterns
+Database Patterns
+</code></pre>
+<blockquote>
+<p>I examined some of the principles that underpin many design patterns. I looked at the use of composition to enable object combination and recombination at runtime, resulting in more flexible structures than would be available using inheritance alone. I also introduced you to decoupling, the practice of extracting software components from their context to make them more generally applicable. Finally, I reviewed the importance of interface as a means of decoupling clients from the details of implementation.</p>
+</blockquote>
+<p>.</p>
+<div class="page">
+</div><p>_</p>
+<h1 id="domain-driven-design">Domain-Driven Design</h1>
+<p>Before delving into the details, it’s good to take a bird’s-eye view of the philosophy so you can get a sense of what DDD is really all about.</p>
+<h3 id="the-problem-space">The Problem Space</h3>
+<p>Before you can develop a solution, you must understand the problem. DDD emphasizes the need to focus on the business problem domain: its terminology, the core reasons behind why the software is being developed, and what success means to the business. The need for the development team to value domain knowledge just as much as technical expertise is vital to gain a deeper insight into the problem domain and to decompose large domains into smaller subdomains.</p>
+<p><img src="https://raw.githubusercontent.com/dandisy/adaptive-software-life-cycle/main/FIGURE%20I-1%20-%20A%20Blueprint%20of%20The%20Problem%20Space%20of%20DDD.jpeg" alt="FIGURE I-1 - A Blueprint of The Problem Space of DDD"></p>
+<div class="page">
+</div><h3 id="the-solution-space">The Solution Space</h3>
+<p>When you have a sound understanding of the problem domain, strategic patterns of DDD can help you implement a technical solution in synergy with the problem space. Patterns enable core parts of your system that are crucial to the success of the product to be protected from the generic areas. Isolating integral components allows them to be modified without having a rippling effect
+throughout the system.</p>
+<p>Core parts of your product that are sufficiently complex or will frequently change should be based on a model. The tactical patterns of DDD along with Model-Driven Design will help you create a useful model of your domain in code. A model is the home to all of the domain logic
+that enables your application to fulfill business use cases. A model is kept separate from technical complexities to enable business rules and policies to evolve. A model that is in synergy with the problem domain will enable your software to be adaptable and understood by other developers and business experts.</p>
+<p><img src="https://raw.githubusercontent.com/dandisy/adaptive-software-life-cycle/main/FIGURE%20I-2%20-%20A%20Blueprint%20of%20The%20Solution%20Space%20of%20Domai-Driven%20Design.jpeg" alt="FIGURE I-2 - A Blueprint of The Solution Space of Domai-Driven Design"></p>
+<div class="page">
+</div><p>_</p>
+<h2 id="complexity-in-software">Complexity in Software</h2>
+<p><img src="https://raw.githubusercontent.com/dandisy/adaptive-software-life-cycle/main/FIGURE%201-1%20-%20Complexity%20in%20Software.jpeg" alt="FIGURE 1-1 - Complexity in Software"></p>
+<p>_</p>
+<h2 id="applying-the-strategic-patterns-of-domain-driven-design">Applying The Strategic Patterns of Domain-Driven Design</h2>
+<p><img src="https://raw.githubusercontent.com/dandisy/adaptive-software-life-cycle/main/FIGURE%201-3%20-%20Applying%20The%20Strategic%20Patterns%20of%20Domain-Driven%20Design.jpeg" alt="FIGURE 1-3 - Applying The Strategic Patterns of Domain-Driven Design"></p>
+<div class="page">
+</div><p>_</p>
+<h2 id="knowledge-crunching">Knowledge Crunching</h2>
+<p><img src="https://raw.githubusercontent.com/dandisy/adaptive-software-life-cycle/main/FIGURE%202-1%20-%20Knowledge%20Crunching.jpeg" alt="FIGURE 2-1 - Knowledge Crunching"></p>
+<div class="page">
+</div><p>_</p>
+<h2 id="the-role-of-domain-model">The Role of Domain Model</h2>
+<p><img src="https://raw.githubusercontent.com/dandisy/adaptive-software-life-cycle/main/FIGURE%204-1%20-%20The%20Role%20of%20Domain%20Model.jpeg" alt="FIGURE 4-1 - The Role of Domain Model"></p>
+<div class="page">
+</div><p>_</p>
+<h2 id="the-domain-versus-the-domain-model">The Domain Versus The Domain Model</h2>
+<p><img src="https://raw.githubusercontent.com/dandisy/adaptive-software-life-cycle/main/FIGURE%204-2%20-%20The%20Domain%20Versus%20The%20Domain%20Model.jpeg" alt="FIGURE 4-2 - The Domain Versus The Domain Model"></p>
+<blockquote>
+<p>Anemic domain</p>
+</blockquote>
+<div class="page">
+</div><p>_</p>
+<h2 id="the-binding-between-the-code-and-analysis-model">The Binding between The Code and Analysis Model</h2>
+<p><img src="https://raw.githubusercontent.com/dandisy/adaptive-software-life-cycle/main/FIGURE%204-3%20-%20The%20Binding%20between%20The%20Code%20and%20Analysis%20Model.jpeg" alt="FIGURE 4-3 - The Binding between The Code and Analysis Model"></p>
+<div class="page">
+</div><p>_</p>
+<h2 id="a-model-will-grow-in-complexity">A Model will Grow in Complexity</h2>
+<p><img src="https://raw.githubusercontent.com/dandisy/adaptive-software-life-cycle/main/FIGURE%206-1%20-%20A%20Model%20will%20Grow%20in%20Complexity.jpeg" alt="FIGURE 6-1 - A Model will Grow in Complexity"></p>
+<div class="page">
+</div><p>_</p>
+<h2 id="domain-terms-mean-different-things-in-different-contexts">Domain Terms Mean Different Things in Different Contexts</h2>
+<p><img src="https://raw.githubusercontent.com/dandisy/adaptive-software-life-cycle/main/FIGURE%206-3%20-%20Domain%20Terms%20Mean%20Different%20Things%20in%20Different%20Contexts.jpeg" alt="FIGURE 6-3 - Domain Terms Mean Different Things in Different Contexts"></p>
+<div class="page">
+</div><p>_</p>
+<h2 id="the-same-concept-should-be-understood-within-different-contexts">The Same Concept should be Understood within Different Contexts</h2>
+<p><img src="https://raw.githubusercontent.com/dandisy/adaptive-software-life-cycle/main/FIGURE%206-4%20-%20The%20Same%20Concept%20should%20be%20Understood%20within%20Different%20Contexts.jpeg" alt="FIGURE 6-4 - The Same Concept should be Understood within Different Contexts"></p>
+<div class="page">
+</div><p>_</p>
+<h2 id="a-single-view-of-an-entity-in-the-domain-for-all-subdomains-can-quicky-become-a-problem">A Single View of An Entity in The Domain for All Subdomains can Quicky Become A Problem</h2>
+<p><img src="https://raw.githubusercontent.com/dandisy/adaptive-software-life-cycle/main/FIGURE%206-5%20-%20A%20Single%20View%20of%20An%20Entity%20in%20The%20Domain%20for%20All%20Subdomains%20can%20Quicky%20Become%20A%20Problem.jpeg" alt="FIGURE 6-5 - A Single View of An Entity in The Domain for All Subdomains can Quicky Become A Problem"></p>
+<div class="page">
+</div><p>_</p>
+<h2 id="the-product-an-implementation-of-the-god-object-antipattern">The Product, An Implementation of The God Object Antipattern</h2>
+<p><img src="https://raw.githubusercontent.com/dandisy/adaptive-software-life-cycle/main/FIGURE%206-6%20-%20The%20Product%2C%20An%20Implementation%20of%20The%20God%20Object%20Antipattern.jpeg" alt="FIGURE 6-6 - The Product, An Implementation of The God Object Antipattern"></p>
+<div class="page">
+</div><p>_</p>
+<h2 id="putting-terms-into-context-and-identifying-multiple-models">Putting Terms into Context and Identifying Multiple Models</h2>
+<p><img src="https://raw.githubusercontent.com/dandisy/adaptive-software-life-cycle/main/FIGURE%206-8%20-%20Putting%20Terms%20into%20Context%20and%20Identifying%20Multiple%20Models.jpeg" alt="FIGURE 6-8 - Putting Terms into Context and Identifying Multiple Models"></p>
+<p>Consider that a Bounded Context is a conceptual boundary around a system. The Ubiquitous Language inside a boundary has a specific contextual meaning. Concepts outside of this context can have different meanings.</p>
+<div class="page">
+</div><p>_</p>
+<h2 id="define-each-model-within-its-own-context">Define Each Model within Its Own Context</h2>
+<p><img src="https://raw.githubusercontent.com/dandisy/adaptive-software-life-cycle/main/FIGURE%206-9%20-%20Define%20Each%20Model%20within%20Its%20Own%20Context.jpeg" alt="FIGURE 6-9 - Define Each Model within Its Own Context"></p>
+<div class="page">
+</div><p>_</p>
+<h2 id="the-product-class-in-different-contexts">The Product Class in Different Contexts</h2>
+<p><img src="https://raw.githubusercontent.com/dandisy/adaptive-software-life-cycle/main/FIGURE%206-11%20-%20The%20Product%20Class%20in%20Different%20Contexts.jpeg" alt="FIGURE 6-11 - The Product Class in Different Contexts"></p>
+<div class="page">
+</div><p>_</p>
+<h2 id="the-anatomy-of-a-bounded-context">The Anatomy of A Bounded Context</h2>
+<p><img src="https://raw.githubusercontent.com/dandisy/adaptive-software-life-cycle/main/FIGURE%206-13%20-%20The%20Anatomy%20of%20A%20Bounded%20Context.jpeg" alt="FIGURE 6-13 - The Anatomy of A Bounded Context"></p>
+<div class="page">
+</div><p>_</p>
+<h2 id="the-technical-integration-on-a-context-map">The Technical Integration on A Context Map</h2>
+<p><img src="https://raw.githubusercontent.com/dandisy/adaptive-software-life-cycle/main/FIGURE%207-2%20-%20The%20Technical%20Integration%20on%20A%20Context%20Map.jpeg" alt="FIGURE 7-2 - The Technical Integration on A Context Map"></p>
+<div class="page">
+</div><p>_</p>
+<h2 id="dependency-inversion-within-a-layered-architecture">Dependency Inversion within A Layered Architecture</h2>
+<p><img src="https://raw.githubusercontent.com/dandisy/adaptive-software-life-cycle/main/FIGURE%208-2%20-%20Dependency%20Inversion%20within%20A%20Layered%20Architecture.jpeg" alt="FIGURE 8-2 - Dependency Inversion within A Layered Architecture"></p>
+<div class="page">
+</div><p>_</p>
+<h2 id="the-process-of-ddd">The Process of DDD</h2>
+<p><img src="https://raw.githubusercontent.com/dandisy/adaptive-software-life-cycle/main/FIGURE%2010-1%20-%20The%20Process%20of%20DDD.jpeg" alt="FIGURE 10-1 - The Process of DDD"></p>
+<div class="page">
+</div><p>_</p>
+<h2 id="tactical-patterns-domain-model-building-blocks">Tactical Patterns, Domain Model Building Blocks</h2>
+<p><img src="https://raw.githubusercontent.com/dandisy/adaptive-software-life-cycle/main/FIGURE%2014-1%20-%20Tactical%20Patterns%2C%20Domain%20Model%20Building%20Blocks.jpeg" alt="FIGURE 14-1 - Tactical Patterns, Domain Model Building Blocks"></p>
+<div class="page">
+</div><p>_</p>
+<h2 id="composing-a-web-page-with-html-provided-by-bounded-contexts">Composing a Web Page with HTML Provided By Bounded Contexts</h2>
+<p><img src="https://raw.githubusercontent.com/dandisy/adaptive-software-life-cycle/main/FIGURE%2023-3%20-%20Composing%20a%20Web%20Page%20with%20HTML%20Provided%20By%20Bounded%20Contexts.jpeg" alt="FIGURE 23-3 - Composing a Web Page with HTML Provided By Bounded Contexts"></p>
+<div class="page">
+</div><p>_</p>
+<h2 id="the-design-for-this-example">The Design for This Example</h2>
+<p><img src="https://raw.githubusercontent.com/dandisy/adaptive-software-life-cycle/main/FIGURE%2023-7%20-%20The%20Design%20for%20This%20Example.jpeg" alt="FIGURE 23-7 - The Design for This Example"></p>
+<p>.</p>
+<div class="page">
+</div><p>_</p>
+<h1 id="clean-architecture">Clean Architecture</h1>
+<p><img src="https://miro.medium.com/max/720/1*B7LkQDyDqLN3rRSrNYkETA.jpeg" alt="Clean Architecture"></p>
+<p><img src="https://miro.medium.com/max/640/0*-cY6zGHk2k6vpZ0M" alt="Clean Architecture - Call Flow"></p>
+<div class="page">
+</div><p>Project Structures (An Example)</p>
+<p>Project structure can be built in several different ways. It is different from layers but it still represents the layers of Clean Architecture.</p>
+<pre><code>Application
+
+- core
+    - user
+        - data
+            - dto
+                - user_dto.dart
+                - user_response_dto.dart
+            - datasource
+                - user_remote_datasource.dart
+                - user_local_datasource.dart
+            - mapper
+                - user_mapper.dart
+            - repository
+                - user_repository.dart
+            - di
+                - dependency.dart
+        - domain
+            - repository
+                - user_repository_impl.dart
+            - entity
+                - user_entity.dart
+            - usecase
+                - get_user_list_usecase.dart
+                - get_user_detail_usecase.dart
+            - di
+                - dependency.dart
+- feature
+    - user
+        - page
+            - user_list_page.dart
+            - user_details_page.dart
+        - controller
+            - user_list_controller.dart
+            - user_details_controller.dart
+        - widget
+            - user_card_widget.dart
+</code></pre>
+<p>Second example:</p>
+<ul>
+<li>https://devmuaz.medium.com/flutter-clean-architecture-series-part-1-d2d4c2e75c47</li>
+<li>https://medium.com/@flutterqueen/solid-principle-clean-architecture-in-flutter-app-25e416e1d130</li>
+</ul>
+<p>.</p>
+<div class="page">
+</div><p>_</p>
+<h1 id="microservice-at-scale">Microservice (At Scale)</h1>
+<pre><code>Microservices are small, autonomous services that work together.
+
+Loosely coupled service-oriented architecture with bounded contexts.
+
+A microservice is an independently deployable component of bounded scope that supports interoperability through message-based communication. Microservice architecture is a style of engineering highly automated, evolvable software systems made up of capability-aligned microservices.
+
+On top of everything else, today’s software architect needs to be able to “think big” when building applications. The microservices style is rooted in the idea of solving the problems that arise when software gets too big. To build at scale means to build software that can continue to work when demand grows beyond our initial expectations. Systems that can work at scale don’t break when under pressure; instead they incorporate built-in mechanisms to increase capacity in a safe way. This added dimension requires a special perspective to building software and is essential to the microservices way.
+
+Key Concepts of Microservices
+
+    - Independent Deployability
+    - Modeled Around a Business Domain
+    - Owning Their Own State
+    - Size
+    - Flexibility
+</code></pre>
+<blockquote></blockquote>
+<pre><code>- Microservices are ideal for big systems
+- Microservice architecture is goal-oriented
+- Microservices are focused on replaceability
+</code></pre>
+<p><img src="https://miro.medium.com/max/720/1*VHdxYDArFErTL4_LE0rRkw.png" alt="CAP"></p>
+<p>So according to CAP Theorem, distributed systems should sacrifice between consistency, availability, and partition tolerance. And, any system can only guarantee two of the three concepts; consistency, availability, and partition tolerance.</p>
+<blockquote>
+<p>The Small Monolith Approach, the problem with microservice from day zero</p>
+</blockquote>
+<div class="page">
+</div><pre><code>Defining priorities
+
+Many companies want the best development ecosystem or great speed of implementation of features, but do not understand that this requires investment. In the case of migration of software architecture, the investment is not only financial, but also time-related.
+
+If the development of microservices cannot be defined as a priority for the whole company, it is better not to start the project. Migrations are neither simple nor easy, and may, at first, seem catastrophic. If this migration is not very well-defined as a priority, the project will stop midway, and the company will face something much worse than keeping a monolith. The worst-case scenario is when you are left with a hybrid application, where a part is in the monolith and a part in microservices. Over time, ambiguities may arise where the application represents the business, and maintaining this application would become even harder.
+</code></pre>
+<blockquote></blockquote>
+<pre><code>Defining the domain
+
+Understanding the Microservices Concepts, we talked a lot about DDD, definitions, and the limits of the business layer. It is exactly at this point that all our knowledge about DDD is applied.
+
+Without well-defined domains, the migration process becomes too time-consuming and prone to mistakes, and this leads to the laborious steps of a redesign.
+</code></pre>
+<div class="page">
+</div><p>Scale cube and microservices</p>
+<p><img src="https://raw.githubusercontent.com/dandisy/adaptive-software-engineering/main/Figure%201.3%20Scale%20cube%20and%20microservices.png" alt="Figure 1.3 The scale cube defines three separate ways to scale an application: X-axis scaling load balances requests across multiple, identical instances; Z-axis scaling routes requests based on an attribute of the request; Y-axis functionally decomposes an application into services"></p>
+<div class="page">
+</div><p><img src="https://www.futurefundamentals.com/wp-content/uploads/2019/06/microservice-architecture.png" alt="Microservice Architecture"></p>
+<blockquote>
+<p>DDD provides us tools for Divide &amp; Conquer microservices</p>
+</blockquote>
+<div class="page">
+</div><p><img src="https://raw.githubusercontent.com/dandisy/adaptive-code/main/microserviceInJava.jpeg" alt="Microservice In Java"></p>
+<p><img src="https://raw.githubusercontent.com/dandisy/adaptive-code/main/MicroservicesInJavaNew-1.webp" alt="Microservice In Java"></p>
+<div class="page">
+</div><h3 id="the-microservices-value-proposition">The Microservices Value Proposition</h3>
+<p><img src="https://raw.githubusercontent.com/dandisy/adaptive-software-engineering/main/Figure%202-1.%20A%20maturity%20model%20for%20microservice%20architecture%20goals%20and%20benefits.png" alt="Figure 2-1. A maturity model for microservice architecture goals and benefits"></p>
+<pre><code>However, we need to have a solid set of guidelines on when to use the microservices architecture and when to avoid it.
+
+- The microservices architecture is ideal when your current enterprise architecture requires modularity.
+- If the business problem that you are trying to solve with your software application is quite simple, you may not need microservices at all (having a simple monolithic web application and a database is usually sufficient).
+- Your software application has to embrace container-based deployment.
+- If your system is far too complex to be segregated into microservices, you should identify the areas into which you can introduce microservices with minimal impact. Then, start implementing a small use case on microservices and build the required ecosystem components around that.
+</code></pre>
+<div class="page">
+</div><h3 id="what-to-split-first">What to Split First?</h3>
+<pre><code>- Decomposition by Layer
+    - Code First
+    - Data First
+- Useful Decompositional Patterns
+    - Strangler Fig Pattern 
+    - Parallel Run
+    - Feature Toggle
+</code></pre>
+<h3 id="refactoring-strategies--spliting-a-monolithic-to-microservices--decomposition-strategies-divide-and-conquer">Refactoring Strategies / Spliting a monolithic to Microservices / Decomposition Strategies (Divide and Conquer)</h3>
+<h3 id="microservice-boundaries-and-ddd">Microservice Boundaries and DDD</h3>
+<pre><code>- Bounded Context
+- Aggregate
+- Big Ball of Mud anti-pattern
+</code></pre>
+<h3 id="information-hiding">Information Hiding</h3>
+<h3 id="smart-proxy--dumb-proxy-smart-endpoints-and-dumb-pipes">Smart proxy &amp; Dumb proxy (Smart Endpoints and Dumb Pipes)</h3>
+<div class="page">
+</div><h3 id="services-communication--integration-active-composition-or-orchestration--reactive-composition-or-choreography">Services Communication / Integration (Active Composition or Orchestration / Reactive Composition or Choreography)</h3>
+<pre><code>- Context Map
+    - Anti-Corruption Layer
+    - Shared Kernel
+    - Conformist
+    - Customer/Supplier
+    - Partnership
+    - Published Language
+    - Open Host Service
+    - Separate Ways
+- Strangler Facade
+- Synch : REST / gRPC / GraphQL / WebSockets / Thrift
+- Asynch (Single Receiver &amp; Multiple Receivers) / Event Bus
+- Service Mesh
+    - Resiliency for Inter-Service Communications
+    - Service Discovery
+    - Routing
+    - Observability
+    - Security
+    - Deployment
+    - Inter-Service Communication Protocols
+- Stream Processing
+- Stateless, Stateful, or Long-Running Services
+- From In-Process to Inter-Process
+- Pattern: Communication Through Common Data
+- Pattern: Request-Response Communication
+- Pattern: Event-Driven Communication
+</code></pre>
+<h3 id="anti-patterns-of-microservice-integration">Anti-Patterns of Microservice Integration</h3>
+<pre><code>- Monolithic API Gateway for Integrating Microservices
+- Integrating Microservice with an ESB
+- Using Homogeneous Technologies to Build all Your Microservices
+</code></pre>
+<h3 id="organizing-microservices">Organizing Microservices</h3>
+<pre><code>- Core Services
+- Integration Services
+- API Services
+</code></pre>
+<div class="page">
+</div><h3 id="distributed-transaction">Distributed Transaction</h3>
+<pre><code>- Avoiding Distributed Transactions with Two-Phase Commit
+- Publishing Events Using Local Transactions
+- Database Log Mining
+- CQRS &amp; Event Sourcing
+- ACID Transactions
+- Saga
+</code></pre>
+<h3 id="data-management">Data Management</h3>
+<pre><code>- Sharing Data Between Microservices (Eliminating Shared Tables, Shared Data, Data Composition)
+- Databases are for storing data, not for business rules
+- Databases are for storing data, not to communicate events
+- Do not create entities with cyclic dependency
+</code></pre>
+<h3 id="polyglot-persistence">Polyglot Persistence</h3>
+<h3 id="caching">Caching</h3>
+<div class="page">
+</div><h3 id="12-factor-app">12-Factor App</h3>
+<pre><code>- Codebase
+- Dependencies
+- Configuration
+- Backing Services
+- Build, Release, Run
+- Processes
+- Shared Nothing Architecture
+- Port Binding
+- Concurrency
+- Disposability
+- Dev/Prod Parity
+- Logs
+- Admin Processes
+- Beyond the 12 Factor App
+    - API First
+    - Telemetry
+    - Security
+</code></pre>
+<h3 id="failur-tolerance-resilience">Failur Tolerance (Resilience)</h3>
+<pre><code>Resilience is a measure of the capacity of a system or individual components in a system to recover quickly from a failure. In other words it is an attribute of a system that enables it to deal with failure in a way that doesn’t cause the entire system to fail.
+
+- Timeouts
+- Circuit breaker
+- Bulkheads (Designing with isolation / Partitioning by criticality)
+- Steady State
+- Fail fast
+- Let It Crash
+- Handshaking
+- Test Harness
+- Shed Load
+- Designing for redundancy (Load Balancing and Failover)
+- Bottleneck anti-pattern
+</code></pre>
+<div class="page">
+</div><h3 id="decomposition-approaches">Decomposition approaches</h3>
+<pre><code>- Decomposing by functionality
+- Decomposing by maturity
+- Decomposing by data access pattern
+- Decomposing by context
+- Pattern: Page-Based Decomposition
+- Pattern: Widget-Based Decomposition
+</code></pre>
+<h3 id="aggregation-patterns">Aggregation patterns</h3>
+<pre><code>- Aggregation for a derived functionality
+- Aggregation for business intelligence
+- Aggregation for client convenience
+- Aggregation to aid system performance
+</code></pre>
+<h3 id="dealing-with-dependencies-agregate">Dealing with Dependencies (Agregate)</h3>
+<p>Another important topic related to independent deployability is embedding of dependencies. Some may argue that a microservice needs to “embed” every single dependency it may require, so that the microservice can be deployed wherever and whenever, without any coordination with the rest of the system.</p>
+<p>Likewise, the trick to microservice mobility is not packing everything but instead ensuring that the deployment destination provides heavy assets, such as database clusters, in a usable and auto-discoverable form at every destination where a microservice may be deployed. Microservices should be written so that they can quickly discover those assets upon deployment and start using them.</p>
+<pre><code>Let’s be clear: data sharing between microservices is still the ultimate no-no. Sharing data creates tight coupling between microservices, which kills their mobility. However, sharing a database cluster installation is absolutely OK, given that each microservice only accesses isolated, namespaced portions of it.
+</code></pre>
+<blockquote>
+<p>Pragmatic Mobility (Our goal is to maximize deployment mobility of a microservice, which may mean different things in different contexts)</p>
+</blockquote>
+<div class="page">
+</div><h3 id="high-cohesion-and-loose-coupling">High Cohesion And Loose Coupling</h3>
+<pre><code>- Domain Coupling
+- Pass-Through Coupling
+- Common Coupling
+- Content Coupling
+</code></pre>
+<h3 id="resilience">Resilience</h3>
+<h3 id="high-availability">High Availability</h3>
+<pre><code>Here are five things you can and should focus on when building a system to make sure that, as its use scales upwards, availability remains high:
+
+- Build with failure in mind
+- Always think about scaling
+- Mitigate risk
+- Monitor availability
+- Respond to availability issues in a predictable and defined way
+</code></pre>
+<h3 id="observability">Observability</h3>
+<pre><code>- Distributed Log/Tracing
+- Data Visualization and Correlation
+- Open Tracing
+- Metrics
+- Analytics Monitoring and Alerting
+- Event-Driven Log Aggregation Architecture
+</code></pre>
+<h3 id="core-services-supporting-services-and-user-facing-applications">Core services, Supporting services, and User-facing applications</h3>
+<h3 id="pattern-central-aggregating-gateway">Pattern: Central Aggregating Gateway</h3>
+<h3 id="pattern-backend-for-frontend-bff">Pattern: Backend for Frontend (BFF)</h3>
+<h3 id="automation">Automation</h3>
+<p>.</p>
+<div class="page">
+</div><p>_</p>
+<h1 id="devops-and-containers-orchestration">DevOps and Containers Orchestration</h1>
+<p>Principles of Microservice Deployment</p>
+<ul>
+<li>Isolated Execution</li>
+<li>Focus on Automation</li>
+<li>Infrastructure as Code (IAC)</li>
+<li>Zero-Downtime Deployment</li>
+<li>Desired State Management</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/dandisy/adaptive-software-engineering-life-cycle/main/cicd_pipeline_infograph.png" alt="CI/CD Pipeline"></p>
+<p><img src="https://assets.website-files.com/5ff66329429d880392f6cba2/610b9c74ce12c711d0c71c31_kubernetes%20container.png" alt="Container Orchestration"></p>
+<p>.</p>
+<div class="page">
+</div><p>_</p>
+<h1 id="management">Management</h1>
+<h3 id="api-management">API Management</h3>
+<p>Customers today want to have access to enterprise data and services through a variety of digital devices and channels. To meet customer expectations, enterprises need to open their assets in an agile, flexible, secure, and scalable manner. APIs form the window into an enterprise’s data and services. They allow applications to easily communicate with each other using a lightweight protocol like HTTP. Developers use APIs to write applications that interact with the back-end system. Once an API has been created, it needs to be managed using an API management platform. An API management platform helps an organization publish APIs to internal, partner, and external developers to unlock the unique potential of their assets. It provides the core capabilities to ensure a successful API program through developer engagement, business insights, analytics, security, and protection. An API management platform helps business accelerate outreach across digital channels, drive partner adoption, monetize digital assets, and provide analytics to optimize investments in digital transformation.</p>
+<p><img src="https://raw.githubusercontent.com/dandisy/adaptive-software-engineering-life-cycle/main/Figure%202-2%20-%20API%20Management%20Capabilities.jpeg" alt="Figure 2-2 - API Management Capabilities"></p>
+<div class="page">
+</div><p><img src="https://raw.githubusercontent.com/dandisy/adaptive-software-engineering/main/Figure%2010-1.%20Components%20of%20API%20management.png" alt="Figure 10-1. Components of API management"></p>
+<p>.</p>
+<div class="page">
+</div><p>_</p>
+<h1 id="governance-architecting-for-scale">Governance (Architecting for Scale)</h1>
+<p>Aside from regulatory issues (e.g., certification, audits, etc.) there are typically three ways in which you can address security and governance requirements in a microservice system: centralized, contextual, and decentralized.</p>
+<h3 id="api-governance">API Governance</h3>
+<p>API governance is distinct from SOA governance. API governance provides a policy-driven approach that helps to enforce standards and checkpoints throughout the API lifecycle. It encompasses not only the API runtime, but also design through development processes. It includes the guidelines, standards, and processes to be followed for API identification, interface documentation, development, testing, deployment, run, and operation. Standards and principles defined by API governance provide API quality assurance, such as security, availability, scalability, and reliability. It underpins the API enablement aspect that is critical for the successful adoption of APIs.</p>
+<h3 id="microservices-governance">Microservices Governance</h3>
+<p>We can identify <strong>two key aspects of governance: design-time governance of services (selecting technologies, protocols, etc.) and runtime governance (service definitions, service registry and discovery, service versioning, service runtime dependencies, service ownerships and consumers, enforcing QoS, and service observerability)</strong>.</p>
+<p>Microservices architecture allows teams to have autonomy when developing and delivering services. They can select their own runtimes, languages, tools, and processes. But these teams do not fall from the sky. There needs to be a process to identify the service requirements and then spin off the teams to work independently.</p>
+<p>This can be the starting point of the microservices governance where there is a process to spin-off a team when a business requirement needs to be delivered as a service (specifically microservice). This can be implemented as a lifecycle in the governance platform and managed by a central team that consists of business analysts, architects, and a few developers.</p>
+<p><img src="https://raw.githubusercontent.com/dandisy/adaptive-software-engineering-life-cycle/main/microservices%20governance.jpeg" alt="Microservices Governance"></p>
+<p>Once the microservices team is identified and handed over the specification to implement, it is up to the team to come up with their own tools, processes, and technologies to deliver the expected results. Even though microservices teams can define their own service delivery lifecycles, standards, and best practices, those need to be aligned with the overall business goals and objectives. The idea of governance in the context of microservices is not to hinder the innovation by putting a centralized management structure, rather introduce proper order via a distributed governance layer with a centralized control plane.</p>
+<blockquote>
+<p>SLA, SLO &amp; SLI</p>
+</blockquote>
+<div class="page">
+</div><h3 id="scaling">Scaling</h3>
+<pre><code>The Four Axes of Scaling
+    - Vertical Scaling
+    - Horizontal Duplication
+    - Data Partitioning
+    - Functional Decomposition
+Combining Models
+Start Small
+Caching
+    - For Performance
+    - For Scale
+    - For Robustness
+    - Where to Cache
+    - Invalidation
+    - The Golden Rule of Caching
+    - Freshness Versus Optimization
+    - Cache Poisoning: A Cautionary Tale
+Autoscaling
+Starting Again
+</code></pre>
+<p><img src="https://raw.githubusercontent.com/dandisy/adaptive-software-engineering/main/Figure%206-1.%20Key%20components%20for%20the%20realization%20of%20microservices%20governance.png" alt="Figure 6-1. Key components for the realization of microservices governance"></p>
+<div class="page">
+</div><h3 id="resiliency">Resiliency</h3>
+<pre><code>What Is Resiliency?
+    - Robustness
+    - Rebound
+    - Graceful Extensibility
+    - Sustained Adaptability
+    - And Microservice Architecture
+Failure Is Everywhere
+How Much Is Too Much?
+Degrading Functionality
+Stability Patterns
+    - Time-Outs
+    - Retries
+    - Bulkheads
+    - Circuit Breakers
+    - Isolation
+    - Redundancy
+    - Middleware
+    - Idempotency
+Spreading Your Risk
+CAP Theorem
+    - Sacrificing Consistency
+    - Sacrificing Availability
+    - Sacrificing Partition Tolerance?
+    - AP or CP?
+    - It’s Not All or Nothing
+    - And the Real World
+Chaos Engineering
+    - Game Days
+    - Production Experiments
+    - From Robustness to Beyond
+Blame
+</code></pre>
+<div class="page">
+</div><h3 id="observability">Observability</h3>
+<pre><code>Building Blocks for Observability
+
+    - Log Aggregation
+    - Metrics Aggregation
+    - Distributed Tracing
+    - Are We Doing OK?
+    - Alerting
+    - Semantic Monitoring
+    - Testing in Production
+</code></pre>
+<blockquote></blockquote>
+<h3 id="testing-in-production">Testing in Production</h3>
+<p><img src="https://raw.githubusercontent.com/dandisy/adaptive-software-engineering/main/testing.jpeg" alt="Testing in Production"></p>
+<div class="page">
+</div><pre><code>- Types of Tests
+- Test Scope
+    - Unit Tests
+    - Service Tests
+    - End-to-End Tests
+    - Trade-Offs
+- Implementing Service Tests
+    - Mocking or Stubbing
+    - A Smarter Stub Service
+- Implementing (Those Tricky) End-to-End Tests
+    - Flaky and Brittle Tests
+    - Who Writes These End-to-End Tests?
+    - How Long Should End-to-End Tests Run?
+    - The Great Pile-Up
+    - The Metaversion
+    - Lack of Independent Testability
+- Should You Avoid End-to-End Tests?
+    - Contract Tests and Consumer-Driven Contracts (CDCs)
+    - The Final Word
+- Developer Experience
+- From Preproduction to In-Production Testing
+    - Types of In-Production Testing
+    - Making Testing in Production Safe
+    - Mean Time to Repair over Mean Time Between Failures?
+- Cross-Functional Testing
+    - Performance Tests
+    - Robustness Tests
+</code></pre>
+<div class="page">
+</div><h3 id="a-layered-cyber-security-defence-framework">A Layered Cyber Security Defence Framework</h3>
+<p><img src="https://raw.githubusercontent.com/dandisy/adaptive-software-engineering/main/security.jpeg" alt="A Layered Cyber Security Defence Framework"></p>
+<h3 id="cyber-solution-architecture-defense">Cyber Solution Architecture Defense</h3>
+<p><img src="https://0.academia-photos.com/attachment_thumbnails/63303484/mini_magick20200513-6905-1dqfj22.png?1589431881" alt="Cyber Solution Architecture Defense"></p>
+<div class="page">
+</div><p>Controlling Access to a Microservice</p>
+<pre><code>Core Principles
+    - Principle of Least Privilege
+    - Defense in Depth
+    - Automation
+    - Build Security into the Delivery Process
+The Five Functions of Cybersecurity
+    - Identify
+    - Protect
+    - Detect
+    - Respond
+    - Recover
+Foundations of Application Security
+    - Credentials
+    - Patching
+    - Backups
+    - Rebuild
+Implicit Trust Versus Zero Trust
+Securing Data in Transit (Securing Service-to-Service Communication) &amp; at Rest
+Authentication and Authorization
+    - Service-to-Service Authentication
+    - Human Authentication
+    - Common Single Sign-On Implementations
+    - Single Sign-On Gateway
+    - Fine-Grained Authorization
+    - The Confused Deputy Problem
+    - Centralized, Upstream Authorization 
+    - Decentralizing Authorization
+    - JSON Web Tokens
+</code></pre>
+<p>.</p>
+<div class="page">
+</div><p>_</p>
+<h1 id="digital-experience-platform"><strong>Digital Experience Platform</strong></h1>
+<p><img src="https://www.suntechnologies.com/wp-content/uploads/2020/09/image-2-01-scaled.jpg" alt="Digital Experience Platform"></p>
+<p>![Figure 1-2. Digital platform evolution.png](Figure 1-2. Digital platform evolution.png)</p>
+<p><img src="https://www.channelfutures.com/files/2022/07/DPX-Reference-Architecture.jpg" alt="DXP Reference Architecture"></p>
+<p><img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*6tm486ZDw7SkKWBgiz_POA.png" alt="Digital Experience Platform"></p>
+<p>https://medium.com/@razi_chaudhry/explaining-the-blueprint-for-digital-experience-platforms-e6fe5a088701</p>
+<div class="page">
+</div><p>_</p>
+<p><img src="https://images.squarespace-cdn.com/content/v1/5dbc3f3561d39a5904244fcf/1615044661536-6MDSKKCJHK7J1FU5K67E/2021-03-06+10_30_34-Sitecore+Launchpad.png?format=2500w" alt="Features of Sitecore Experience Platform"></p>
+<p><img src="https://www.martechthai.com/wp-content/uploads/2021/06/SitecoreExperience-Platform.jpg" alt="Sitecore Experience Platform"></p>
+<p><img src="https://www.martechthai.com/wp-content/uploads/2021/06/sitecore-contact.jpg" alt="Sitecore Experience Profile"></p>
+<p><img src="https://www.codehousegroup.com/-/media/codehouse-website/site-tree/home/insight-and-inspiration/tech-stream/other-tech-stream-assets/sitecore-personalisation-sitecore-experience-profile.png" alt="Sitecore Personalization"></p>
+<p><img src="https://www.martechthai.com/wp-content/uploads/2021/06/sitecore-automation.jpg" alt="Sitecore Automation"></p>
+<div class="page">
+</div><p>_</p>
+<p><img src="https://astrakhan.fr/wp-content/uploads/2020/11/Gamification-1440-x-790.jpg" alt="Gamification drives Customer Loyalty and Engagement"></p>
+<p>.</p>
+<div class="page">
+</div><p>_</p>
+<h1 id="related-topics">Related Topics</h1>
+<ul>
+<li>Agile Management</li>
+<li>Application Life Cycle Management</li>
+<li>Software Development Life Cycle</li>
+<li>Distributed Application (Microservices and Kubernetes)</li>
+<li>Microservices Governance Framework (ie: LeanIX)</li>
+<li>Clean Code and Clean Coder</li>
+<li>Clean Architecture (SOLID Principles and Design Patterns)</li>
+<li>Patterns of Enterprise Application Architecture</li>
+<li>Use Case Driven Object Modeling with UML</li>
+<li>System Analysis and Design/Architecture</li>
+<li>Software Architecture for Developers: Technical leadership by coding, coaching, collaboration, architecture sketching and just enough up front design</li>
+<li>System Performance and System Security</li>
+<li>Scalability Patterns: Best Practices for Designing High Volume Websites</li>
+<li>Data Analysis, Insights and Visualization (Dashboard Monitoring/Report Design)</li>
+<li>Artifical Intelligence (ie: Recommendation System)</li>
+<li>Elastic Stack (Logging and Monitoring)</li>
+<li>Lead/Pipeline Management &amp; Omnichannel Customer Engagement Platform (Clevertap)</li>
+<li>UI/UX Design</li>
+</ul>
+<blockquote></blockquote>
+<ul>
+<li>https://www.sitecore.com</li>
+<li>https://pimcore.com/en/platform</li>
+<li>https://pimcore.com/en/experience-management/ecommerce/features/b2b-commerce-experiences</li>
+<li>https://www.outsystems.com</li>
+<li>https://www.syncfusion.com</li>
+<li>https://js.devexpress.com</li>
+<li>https://www.anychart.com</li>
+<li>https://grapesjs.com</li>
+<li>https://cube.dev</li>
+<li>https://www.recombee.com</li>
+</ul>
+<blockquote></blockquote>
+<ul>
+<li>https://www.youtube.com/watch?v=d_avmxN9CC0</li>
+<li>https://www.youtube.com/watch?v=az9SEMPsxdo</li>
+<li>https://www.youtube.com/watch?v=aTCHpgomDIc</li>
+<li>https://www.youtube.com/watch?v=dwWXwLQ7Mkg</li>
+<li>https://www.youtube.com/watch?v=EbUnxEx3zRY</li>
+<li>https://www.youtube.com/watch?v=OBEhLpPGEXc</li>
+<li>https://www.youtube.com/watch?v=0gx3hMMDOZI</li>
+<li>https://www.youtube.com/watch?v=CY_nav-5iBk</li>
+<li>https://www.youtube.com/watch?v=jrV-fJXAXwY</li>
+</ul>
+<p>.</p>
+<div class="page">
+</div><p>_</p>
+<h1 id="references">References</h1>
+<ul>
+<li>An Engineering - Manager's Guide to Design Patterns - A Brain-Friendly Report</li>
+<li>Domain Driven Desgin In PHP</li>
+<li>Patterns, Principles and Practices of Domain Driven Design</li>
+<li>PHP Objects, Patterns and Practice</li>
+<li>Microservices Patterns</li>
+<li>Spring Microservices in Action</li>
+<li>Learning Microservices with Spring Boot</li>
+<li>API Management</li>
+<li>Architecting for Scale: High Availability for Your Growing Applications</li>
+<li>Microservice Architecture  Aligning Principles, Practices, and Culture</li>
+<li>Building Microservices: Designing Fine-Grained Systems</li>
+<li>Microservices for the Enterprise: Designing, Developing, and Deploying</li>
+<li>Microservices Patterns: WITH EXAMPLES IN JAVA</li>
+<li>Microservice Patterns and Best Practices: Explore patterns like CQRS and event sourcing to create scalable, maintainable, and testable microservices</li>
+<li>Building Digital Experience Platforms: A Guide to Developing Next-Generation Enterprise Applications</li>
+</ul>
+<blockquote></blockquote>
+<ul>
+<li>https://medium.com/@alvaro.armijoss/improve-your-flutter-development-with-clean-architecture-and-tdd-4c13e6af4f18</li>
+<li>https://medium.com/design-microservices-architecture-with-patterns/how-to-choose-a-database-for-microservices-cap-theorem-d1585bf40ecd</li>
+<li>https://avinetworks.com/glossary/container-orchestration</li>
+<li>https://dzone.com/articles/microservices-governance-and-api-management</li>
+</ul>
+<blockquote></blockquote>
+<ul>
+<li>https://medium.com/@razi_chaudhry/explaining-the-blueprint-for-digital-experience-platforms-e6fe5a088701</li>
+</ul>
+
+</body>
+</html>

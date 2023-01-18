@@ -481,6 +481,10 @@ _
 - Design Patterns Promote Good Design
 - Design Patterns are Used By Popular Frameworks
 
+
+
+![GoF Design Patterns](https://www.modernescpp.com/images/blog/Patterns/Classification/GoFOverview.jpg)
+
 .
 
 <div class="page"/>
@@ -935,7 +939,7 @@ _
 
     A microservice is an independently deployable component of bounded scope that supports interoperability through message-based communication. Microservice architecture is a style of engineering highly automated, evolvable software systems made up of capability-aligned microservices.
 
-    On top of everything else, today’s software architect needs to be able to “think big” when building applications. The microservices style is rooted in the idea of solving the problems that arise when software gets too big. To build at scale means to build software that can continue to work when demand grows beyond our initial expectations. Systems that can work at scale don’t break when under pressure; instead they incorporate built-in mechanisms to increase capacity in a safe way. This added dimension requires a special perspective to build‐ ing software and is essential to the microservices way.
+    On top of everything else, today’s software architect needs to be able to “think big” when building applications. The microservices style is rooted in the idea of solving the problems that arise when software gets too big. To build at scale means to build software that can continue to work when demand grows beyond our initial expectations. Systems that can work at scale don’t break when under pressure; instead they incorporate built-in mechanisms to increase capacity in a safe way. This added dimension requires a special perspective to building software and is essential to the microservices way.
 
     Key Concepts of Microservices
 
@@ -983,7 +987,7 @@ Scale cube and microservices
 
 ![Microservice Architecture](https://www.futurefundamentals.com/wp-content/uploads/2019/06/microservice-architecture.png)
 
-> DDD provides us successful microservices
+> DDD provides us tools for Divide & Conquer microservices
 
 <div class="page"/>
 
@@ -993,23 +997,11 @@ Scale cube and microservices
 
 <div class="page"/>
 
-### Dealing with Dependencies
-
-Another important topic related to independent deployability is embedding of dependencies. Some may argue that a microservice needs to “embed” every single dependency it may require, so that the microservice can be deployed wherever and whenever, without any coordination with the rest of the system.
-
-Likewise, the trick to microservice mobility is not packing everything but instead ensuring that the deployment destination provides heavy assets, such as database clusters, in a usable and auto-discoverable form at every destination where a microservice may be deployed. Microservices should be written so that they can quickly discover those assets upon deployment and start using them.
-
-    Let’s be clear: data sharing between microservices is still the ultimate no-no. Sharing data creates tight coupling between microservices, which kills their mobility. However, sharing a database cluster installation is absolutely OK, given that each microservice only accesses isolated, namespaced portions of it.
-
-> Pragmatic Mobility (Our goal is to maximize deployment mobility of a microservice, which may mean different things in different contexts)
-
-<div class="page"/>
-
 ### The Microservices Value Proposition
 
 ![Figure 2-1. A maturity model for microservice architecture goals and benefits](https://raw.githubusercontent.com/dandisy/adaptive-software-engineering/main/Figure%202-1.%20A%20maturity%20model%20for%20microservice%20architecture%20goals%20and%20benefits.png)
 
-However, we need to have a solid set of guidelines on when to use the microservices architecture and when to avoid it.
+    However, we need to have a solid set of guidelines on when to use the microservices architecture and when to avoid it.
 
     - The microservices architecture is ideal when your current enterprise architecture requires modularity.
     - If the business problem that you are trying to solve with your software application is quite simple, you may not need microservices at all (having a simple monolithic web application and a database is usually sufficient).
@@ -1032,6 +1024,16 @@ However, we need to have a solid set of guidelines on when to use the microservi
 ### Microservice Boundaries and DDD
 
     - Bounded Context
+    - Aggregate
+    - Big Ball of Mud anti-pattern
+
+### Information Hiding
+### Smart proxy & Dumb proxy (Smart Endpoints and Dumb Pipes)
+
+<div class="page"/>
+
+### Services Communication / Integration (Active Composition or Orchestration / Reactive Composition or Choreography)
+
     - Context Map
         - Anti-Corruption Layer
         - Shared Kernel
@@ -1041,16 +1043,6 @@ However, we need to have a solid set of guidelines on when to use the microservi
         - Published Language
         - Open Host Service
         - Separate Ways
-    - Aggregate
-    - Big Ball of Mud anti-pattern
-
-### Smart proxy & Dumb proxy (Smart Endpoints and Dumb Pipes)
-
-<div class="page"/>
-
-### Services Communication / Integration (Active Composition or Orchestration / Reactive Composition or Choreography)
-
-    - Anti-Corruption Layer
     - Strangler Facade
     - Synch : REST / gRPC / GraphQL / WebSockets / Thrift
     - Asynch (Single Receiver & Multiple Receivers) / Event Bus
@@ -1101,53 +1093,6 @@ However, we need to have a solid set of guidelines on when to use the microservi
 
 ### Polyglot Persistence
 ### Caching
-### Failur Tolerance (Resilience)
-
-    Resilience is a measure of the capacity of a system or individual components in a system to recover quickly from a failure. In other words it is an attribute of a system that enables it to deal with failure in a way that doesn’t cause the entire system to fail.
-
-    - Timeouts
-    - Circuit breaker
-    - Bulkheads (Designing with isolation / Partitioning by criticality)
-    - Steady State
-    - Fail fast
-    - Let It Crash
-    - Handshaking
-    - Test Harness
-    - Shed Load
-    - Designing for redundancy (Load Balancing and Failover)
-    - Bottleneck anti-pattern
-
-<div class="page"/>
-
-### High Availability
-
-    Here are five things you can and should focus on when building a system to make sure that, as its use scales upwards, availability remains high:
-
-    - Build with failure in mind
-    - Always think about scaling
-    - Mitigate risk
-    - Monitor availability
-    - Respond to availability issues in a predictable and defined way
-
-### High Cohesion And Loose Coupling
-
-    - Domain Coupling
-    - Pass-Through Coupling
-    - Common Coupling
-    - Content Coupling
-
-### Information Hiding
-### Resilience
-### Observability
-
-    - Distributed Log/Tracing
-    - Data Visualization and Correlation
-    - Open Tracing
-    - Metrics
-    - Analytics Monitoring and Alerting
-    - Event-Driven Log Aggregation Architecture
-
-### Automation
 
 <div class="page"/>
 
@@ -1171,6 +1116,24 @@ However, we need to have a solid set of guidelines on when to use the microservi
         - Telemetry
         - Security
 
+### Failur Tolerance (Resilience)
+
+    Resilience is a measure of the capacity of a system or individual components in a system to recover quickly from a failure. In other words it is an attribute of a system that enables it to deal with failure in a way that doesn’t cause the entire system to fail.
+
+    - Timeouts
+    - Circuit breaker
+    - Bulkheads (Designing with isolation / Partitioning by criticality)
+    - Steady State
+    - Fail fast
+    - Let It Crash
+    - Handshaking
+    - Test Harness
+    - Shed Load
+    - Designing for redundancy (Load Balancing and Failover)
+    - Bottleneck anti-pattern
+
+<div class="page"/>
+
 ### Decomposition approaches
 
     - Decomposing by functionality
@@ -1187,9 +1150,49 @@ However, we need to have a solid set of guidelines on when to use the microservi
     - Aggregation for client convenience
     - Aggregation to aid system performance
 
+### Dealing with Dependencies (Agregate)
+
+Another important topic related to independent deployability is embedding of dependencies. Some may argue that a microservice needs to “embed” every single dependency it may require, so that the microservice can be deployed wherever and whenever, without any coordination with the rest of the system.
+
+Likewise, the trick to microservice mobility is not packing everything but instead ensuring that the deployment destination provides heavy assets, such as database clusters, in a usable and auto-discoverable form at every destination where a microservice may be deployed. Microservices should be written so that they can quickly discover those assets upon deployment and start using them.
+
+    Let’s be clear: data sharing between microservices is still the ultimate no-no. Sharing data creates tight coupling between microservices, which kills their mobility. However, sharing a database cluster installation is absolutely OK, given that each microservice only accesses isolated, namespaced portions of it.
+
+> Pragmatic Mobility (Our goal is to maximize deployment mobility of a microservice, which may mean different things in different contexts)
+
+<div class="page"/>
+
+### High Cohesion And Loose Coupling
+
+    - Domain Coupling
+    - Pass-Through Coupling
+    - Common Coupling
+    - Content Coupling
+
+### Resilience
+### High Availability
+
+    Here are five things you can and should focus on when building a system to make sure that, as its use scales upwards, availability remains high:
+
+    - Build with failure in mind
+    - Always think about scaling
+    - Mitigate risk
+    - Monitor availability
+    - Respond to availability issues in a predictable and defined way
+
+### Observability
+
+    - Distributed Log/Tracing
+    - Data Visualization and Correlation
+    - Open Tracing
+    - Metrics
+    - Analytics Monitoring and Alerting
+    - Event-Driven Log Aggregation Architecture
+
 ### Core services, Supporting services, and User-facing applications
 ### Pattern: Central Aggregating Gateway
 ### Pattern: Backend for Frontend (BFF)
+### Automation
 
 .
 
@@ -1245,7 +1248,7 @@ API governance is distinct from SOA governance. API governance provides a policy
 
 ### Microservices Governance
 
-We can identify two key aspects of governance: design-time governance of services (selecting technologies, protocols, etc.) and runtime governance (service definitions, service registry and discovery, service versioning, service runtime dependencies, service ownerships and consumers, enforcing QoS, and service observerability).
+We can identify **two key aspects of governance: design-time governance of services (selecting technologies, protocols, etc.) and runtime governance (service definitions, service registry and discovery, service versioning, service runtime dependencies, service ownerships and consumers, enforcing QoS, and service observerability)**.
 
 Microservices architecture allows teams to have autonomy when developing and delivering services. They can select their own runtimes, languages, tools, and processes. But these teams do not fall from the sky. There needs to be a process to identify the service requirements and then spin off the teams to work independently. 
 
@@ -1259,21 +1262,32 @@ Once the microservices team is identified and handed over the specification to i
 
 <div class="page"/>
 
-Observability
+### Scaling
+    
+    The Four Axes of Scaling
+        - Vertical Scaling
+        - Horizontal Duplication
+        - Data Partitioning
+        - Functional Decomposition
+    Combining Models
+    Start Small
+    Caching
+        - For Performance
+        - For Scale
+        - For Robustness
+        - Where to Cache
+        - Invalidation
+        - The Golden Rule of Caching
+        - Freshness Versus Optimization
+        - Cache Poisoning: A Cautionary Tale
+    Autoscaling
+    Starting Again
 
-    Building Blocks for Observability
+![Figure 6-1. Key components for the realization of microservices governance](https://raw.githubusercontent.com/dandisy/adaptive-software-engineering/main/Figure%206-1.%20Key%20components%20for%20the%20realization%20of%20microservices%20governance.png)
 
-        - Log Aggregation
-        - Metrics Aggregation
-        - Distributed Tracing
-        - Are We Doing OK?
-        - Alerting
-        - Semantic Monitoring
-        - Testing in Production
+<div class="page"/>
 
->
-
-Resiliency
+### Resiliency
 
     What Is Resiliency?
         - Robustness
@@ -1307,36 +1321,27 @@ Resiliency
         - From Robustness to Beyond
     Blame
 
->
-
-Scaling
-    
-    The Four Axes of Scaling
-        - Vertical Scaling
-        - Horizontal Duplication
-        - Data Partitioning
-        - Functional Decomposition
-    Combining Models
-    Start Small
-    Caching
-        - For Performance
-        - For Scale
-        - For Robustness
-        - Where to Cache
-        - Invalidation
-        - The Golden Rule of Caching
-        - Freshness Versus Optimization
-        - Cache Poisoning: A Cautionary Tale
-    Autoscaling
-    Starting Again
-
-![Figure 6-1. Key components for the realization of microservices governance](https://raw.githubusercontent.com/dandisy/adaptive-software-engineering/main/Figure%206-1.%20Key%20components%20for%20the%20realization%20of%20microservices%20governance.png)
-
 <div class="page"/>
 
-Testing
+### Observability
 
-![Testing](https://raw.githubusercontent.com/dandisy/adaptive-software-engineering/main/testing.jpeg)
+    Building Blocks for Observability
+
+        - Log Aggregation
+        - Metrics Aggregation
+        - Distributed Tracing
+        - Are We Doing OK?
+        - Alerting
+        - Semantic Monitoring
+        - Testing in Production
+
+>
+
+### Testing in Production
+
+![Testing in Production](https://raw.githubusercontent.com/dandisy/adaptive-software-engineering/main/testing.jpeg)
+
+<div class="page"/>
 
     - Types of Tests
     - Test Scope
@@ -1368,9 +1373,15 @@ Testing
 
 <div class="page"/>
 
-Security
+### A Layered Cyber Security Defence Framework
 
-![Security](https://raw.githubusercontent.com/dandisy/adaptive-software-engineering/main/security.jpeg)
+![A Layered Cyber Security Defence Framework](https://raw.githubusercontent.com/dandisy/adaptive-software-engineering/main/security.jpeg)
+
+### Cyber Solution Architecture Defense
+
+![Cyber Solution Architecture Defense](https://0.academia-photos.com/attachment_thumbnails/63303484/mini_magick20200513-6905-1dqfj22.png?1589431881)
+
+<div class="page"/>
 
 Controlling Access to a Microservice
 
@@ -1409,6 +1420,44 @@ Controlling Access to a Microservice
 
 _
 
+# **Digital Experience Platform**
+
+![Digital Experience Platform](https://www.suntechnologies.com/wp-content/uploads/2020/09/image-2-01-scaled.jpg)
+
+![Figure 1-2. Digital platform evolution.png](Figure 1-2. Digital platform evolution.png)
+
+![DXP Reference Architecture](https://www.channelfutures.com/files/2022/07/DPX-Reference-Architecture.jpg)
+
+![Digital Experience Platform](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*6tm486ZDw7SkKWBgiz_POA.png)
+
+https://medium.com/@razi_chaudhry/explaining-the-blueprint-for-digital-experience-platforms-e6fe5a088701
+
+<div class="page"/>
+
+_
+
+![Features of Sitecore Experience Platform](https://images.squarespace-cdn.com/content/v1/5dbc3f3561d39a5904244fcf/1615044661536-6MDSKKCJHK7J1FU5K67E/2021-03-06+10_30_34-Sitecore+Launchpad.png?format=2500w)
+
+![Sitecore Experience Platform](https://www.martechthai.com/wp-content/uploads/2021/06/SitecoreExperience-Platform.jpg)
+
+![Sitecore Experience Profile](https://www.martechthai.com/wp-content/uploads/2021/06/sitecore-contact.jpg)
+
+![Sitecore Personalization](https://www.codehousegroup.com/-/media/codehouse-website/site-tree/home/insight-and-inspiration/tech-stream/other-tech-stream-assets/sitecore-personalisation-sitecore-experience-profile.png)
+
+![Sitecore Automation](https://www.martechthai.com/wp-content/uploads/2021/06/sitecore-automation.jpg)
+
+<div class="page"/>
+
+_
+
+![Gamification drives Customer Loyalty and Engagement](https://astrakhan.fr/wp-content/uploads/2020/11/Gamification-1440-x-790.jpg)
+
+.
+
+<div class="page"/>
+
+_
+
 # Related Topics
 
 - Agile Management
@@ -1421,13 +1470,13 @@ _
 - Patterns of Enterprise Application Architecture
 - Use Case Driven Object Modeling with UML
 - System Analysis and Design/Architecture
-- Software Architecture for Developers -- Technical leadership by coding, coaching, collaboration, architecture sketching and just enough up front design
+- Software Architecture for Developers: Technical leadership by coding, coaching, collaboration, architecture sketching and just enough up front design
 - System Performance and System Security
-- Scalability Patterns -- Best Practices for Designing High Volume Websites
+- Scalability Patterns: Best Practices for Designing High Volume Websites
 - Data Analysis, Insights and Visualization (Dashboard Monitoring/Report Design)
 - Artifical Intelligence (ie: Recommendation System)
 - Elastic Stack (Logging and Monitoring)
-- Digital Experience Platforms and Gamification
+- Lead/Pipeline Management & Omnichannel Customer Engagement Platform (Clevertap)
 - UI/UX Design
 
 >
@@ -1471,12 +1520,13 @@ _
 - Spring Microservices in Action
 - Learning Microservices with Spring Boot
 - API Management
-- Architecting for Scale -- High Availability for Your Growing Applications
+- Architecting for Scale: High Availability for Your Growing Applications
 - Microservice Architecture  Aligning Principles, Practices, and Culture
-- Building Microservices -- Designing Fine-Grained Systems
-- Microservices for the Enterprise -- Designing, Developing, and Deploying
-- Microservices Patterns -- WITH EXAMPLES IN JAVA
-- Microservice Patterns and Best Practices -- Explore patterns like CQRS and event sourcing to create scalable, maintainable, and testable microservices
+- Building Microservices: Designing Fine-Grained Systems
+- Microservices for the Enterprise: Designing, Developing, and Deploying
+- Microservices Patterns: WITH EXAMPLES IN JAVA
+- Microservice Patterns and Best Practices: Explore patterns like CQRS and event sourcing to create scalable, maintainable, and testable microservices
+- Building Digital Experience Platforms: A Guide to Developing Next-Generation Enterprise Applications
 
 >
 
@@ -1484,3 +1534,7 @@ _
 - https://medium.com/design-microservices-architecture-with-patterns/how-to-choose-a-database-for-microservices-cap-theorem-d1585bf40ecd
 - https://avinetworks.com/glossary/container-orchestration
 - https://dzone.com/articles/microservices-governance-and-api-management
+
+>
+
+- https://medium.com/@razi_chaudhry/explaining-the-blueprint-for-digital-experience-platforms-e6fe5a088701
