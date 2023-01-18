@@ -1460,7 +1460,6 @@ _
 
 ![Sitecore Automation](https://www.martechthai.com/wp-content/uploads/2021/06/sitecore-automation.jpg)
 
-
 <div class="page"/>
 
 _
