@@ -1442,11 +1442,24 @@ _
 
 ![Sitecore Experience Platform](https://www.martechthai.com/wp-content/uploads/2021/06/SitecoreExperience-Platform.jpg)
 
+![Sitecore Dashboard](https://doc.sitecore.com/xp/en/developers/81/sitecore-experience-platform/image/162b58bf36c4c7.png)
+
+![Sitecore Content Versions](https://i.stack.imgur.com/gBJ1u.png)
+
+![Sitecore Content Editor](https://blogs.perficient.com/files/2017/09/content_editor.png)
+
+![Sitecore Experience Editor](https://static.packt-cdn.com/products/9781784396527/graphics/B03618_01_20.jpg)
+
+![Layout & Components](https://static.packt-cdn.com/products/9781784396527/graphics/B03618_01_18.jpg)
+
+![Layout & Components](https://static1.squarespace.com/static/57b853263e00be38aebfd537/t/57b854381dd45466d8594cc9/1471275982483/1000w/Component+Architecture.jpg)
+
 ![Sitecore Experience Profile](https://www.martechthai.com/wp-content/uploads/2021/06/sitecore-contact.jpg)
 
 ![Sitecore Personalization](https://www.codehousegroup.com/-/media/codehouse-website/site-tree/home/insight-and-inspiration/tech-stream/other-tech-stream-assets/sitecore-personalisation-sitecore-experience-profile.png)
 
 ![Sitecore Automation](https://www.martechthai.com/wp-content/uploads/2021/06/sitecore-automation.jpg)
+
 
 <div class="page"/>
 
