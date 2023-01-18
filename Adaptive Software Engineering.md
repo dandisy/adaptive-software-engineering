@@ -1424,7 +1424,9 @@ _
 
 ![Digital Experience Platform](https://www.suntechnologies.com/wp-content/uploads/2020/09/image-2-01-scaled.jpg)
 
-![Figure 1-2. Digital platform evolution.png](Figure 1-2. Digital platform evolution.png)
+![Figure 1-2. Digital platform evolution](https://raw.githubusercontent.com/dandisy/adaptive-software-engineering/main/Figure%201-2.%20Digital%20platform%20evolution.png)
+
+<div class="page"/>
 
 ![DXP Reference Architecture](https://www.channelfutures.com/files/2022/07/DPX-Reference-Architecture.jpg)
 
