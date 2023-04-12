@@ -1092,9 +1092,6 @@ Scale cube and microservices
     - Do not create entities with cyclic dependency
 
 ### Polyglot Persistence
-### Caching
-
-<div class="page"/>
 
 ### 12-Factor App
 
@@ -1116,6 +1113,8 @@ Scale cube and microservices
         - Telemetry
         - Security
 
+<div class="page"/>
+
 ### Decomposition approaches
 
     - Decomposing by functionality
@@ -1132,8 +1131,6 @@ Scale cube and microservices
     - Aggregation for client convenience
     - Aggregation to aid system performance
 
-<div class="page"/>
-
 ### Dealing with Dependencies (Agregate)
 
 Another important topic related to independent deployability is embedding of dependencies. Some may argue that a microservice needs to “embed” every single dependency it may require, so that the microservice can be deployed wherever and whenever, without any coordination with the rest of the system.
@@ -1143,6 +1140,8 @@ Likewise, the trick to microservice mobility is not packing everything but inste
     Let’s be clear: data sharing between microservices is still the ultimate no-no. Sharing data creates tight coupling between microservices, which kills their mobility. However, sharing a database cluster installation is absolutely OK, given that each microservice only accesses isolated, namespaced portions of it.
 
 > Pragmatic Mobility (Our goal is to maximize deployment mobility of a microservice, which may mean different things in different contexts)
+
+<div class="page"/>
 
 ### High Cohesion And Loose Coupling
 
@@ -1154,7 +1153,6 @@ Likewise, the trick to microservice mobility is not packing everything but inste
 ### Core services, Supporting services, and User-facing applications
 ### Pattern: Central Aggregating Gateway
 ### Pattern: Backend for Frontend (BFF)
-### Automation
 
 .
 
@@ -1221,10 +1219,6 @@ This can be the starting point of the microservices governance where there is a 
 Once the microservices team is identified and handed over the specification to implement, it is up to the team to come up with their own tools, processes, and technologies to deliver the expected results. Even though microservices teams can define their own service delivery lifecycles, standards, and best practices, those need to be aligned with the overall business goals and objectives. The idea of governance in the context of microservices is not to hinder the innovation by putting a centralized management structure, rather introduce proper order via a distributed governance layer with a centralized control plane.
 
 > SLA, SLO & SLI
-
-> Software load balancers are known to implement a combination of algorithms such as Weighted Scheduling Algorithm, round robin scheduling, least connection first scheduling.
-
-> Centralized Session Store
 
 <div class="page"/>
 
@@ -1374,6 +1368,14 @@ Building Blocks for Observability
         - Testing in Production
 
 ### Single points of failures (SPoFs)
+
+> Software load balancers are known to implement a combination of algorithms such as Weighted Scheduling Algorithm, round robin scheduling, least connection first scheduling.
+
+### Caching
+
+> Centralized Session Store
+
+### Automation
 
 ### Downtime Impact
 
