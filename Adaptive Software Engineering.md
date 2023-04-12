@@ -1260,9 +1260,15 @@ Once the microservices team is identified and handed over the specification to i
 
 > SLA, SLO & SLI
 
+> Software load balancers are known to implement a combination of algorithms such as Weighted Scheduling Algorithm, round robin scheduling, least connection first scheduling.
+
+> Centralized Session Store
+
 <div class="page"/>
 
 ### Scaling
+
+The potential of a system, network, or even a process to handle a certain number of simultaneous users, sessions, transactions, or operations and grow seamlessly as needed.
     
     The Four Axes of Scaling
         - Vertical Scaling
@@ -1284,6 +1290,20 @@ Once the microservices team is identified and handed over the specification to i
     Starting Again
 
 ![Figure 6-1. Key components for the realization of microservices governance](https://raw.githubusercontent.com/dandisy/adaptive-software-engineering/main/Figure%206-1.%20Key%20components%20for%20the%20realization%20of%20microservices%20governance.png)
+
+<div class="page"/>
+
+### Reliability
+
+A system that performs as expected for a specific period of time is known as a reliable system. During this specified period of time, reliability is defined as the concerned system’s resistance to failure. A partial failure of a system should not lead to the complete failure of a reliable system. Below are the different measures to calculate reliability.
+
+1. Mean Time Between Failures (MTBF): This is defined as the difference of Total Time Elapsed and Total Downtime divided by the number of failures. MTBF = (Total Time Elapsed - Total Downtime)/
+(Number of failures)
+2. Mean Time to Repair (MTTR): This is defined as the average time taken to repair a failed component.
+
+### Performance
+
+Performance is sometimes incorrectly defined as time taken per operation; however, performance really boils down to amount of work accomplished compared to the time and resources used. Good performance, hence, is nothing but the optimum utilization of all resources involved.
 
 <div class="page"/>
 
@@ -1323,6 +1343,16 @@ Once the microservices team is identified and handed over the specification to i
 
 <div class="page"/>
 
+### Responsiveness
+
+### Availability
+
+A direct effect of scalability is availability. Availability generally refers to the ability of a user to access a system during the window of time in which the system is supposed to be accessible. In the web world, most systems are supposedly accessible 24/7, so the window of time may be a little redundant here. One big thing to keep in mind is responsiveness of the system. A system won’t be considered available if the response time is overly delayed. For example, if an average response from a website takes less than one second, the system will be considered largely unavailable if the system takes, let’s say, one minute to respond.
+
+The following formula is used to calculate Availability:
+
+    Availability (%) = (Total Time Elapsed - Total Downtime)/(Total Time Elapsed)
+
 ### Observability
 
     Building Blocks for Observability
@@ -1335,7 +1365,32 @@ Once the microservices team is identified and handed over the specification to i
         - Semantic Monitoring
         - Testing in Production
 
+### Single points of failures (SPoFs)
+
+### Fault Tolerance
+
+### Downtime Impact
+
 >
+
+<div class="page"/>
+
+    Deliberate attempts to fail the architecture iteratively. I utilized sessions of brainstorming followed by deliberate attempts to fail the architecture. This is an on-going process. The process is simple:
+
+    1. Understand all the business requirements.
+    2. Make a conscious effort to understand the future vision of the company as well as theproject.
+    3. List all technical, functional and non-functional requirements.
+    4. Create an architecture that encompasses everything from 1-3.
+    5. Brainstorm on how to fail it by identifying:
+        a. Failures,
+        b. Bottlenecks,
+        c. Downtime.
+    6. Come up with an architectural solution to the problems identified in 5.
+    7. Add it to the architecture and create a better pattern.
+    8. Repeat the process (steps 3-7) until we come up with an architectural pattern that works.
+    9. Use these principles to create a modern architecture.
+
+<div class="page"/>
 
 ### Testing in Production
 
