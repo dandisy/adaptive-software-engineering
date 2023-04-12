@@ -977,17 +977,15 @@ So according to CAP Theorem, distributed systems should sacrifice between consis
     
     Without well-defined domains, the migration process becomes too time-consuming and prone to mistakes, and this leads to the laborious steps of a redesign.
 
+> DDD provides us tools for Divide & Conquer microservices
+
 <div class="page"/>
 
 Scale cube and microservices
 
 ![Figure 1.3 The scale cube defines three separate ways to scale an application: X-axis scaling load balances requests across multiple, identical instances; Z-axis scaling routes requests based on an attribute of the request; Y-axis functionally decomposes an application into services](https://raw.githubusercontent.com/dandisy/adaptive-software-engineering/main/Figure%201.3%20Scale%20cube%20and%20microservices.png)
 
-<div class="page"/>
-
 ![Microservice Architecture](https://www.futurefundamentals.com/wp-content/uploads/2019/06/microservice-architecture.png)
-
-> DDD provides us tools for Divide & Conquer microservices
 
 <div class="page"/>
 
@@ -1116,24 +1114,6 @@ Scale cube and microservices
         - Telemetry
         - Security
 
-### Failur Tolerance (Resilience)
-
-    Resilience is a measure of the capacity of a system or individual components in a system to recover quickly from a failure. In other words it is an attribute of a system that enables it to deal with failure in a way that doesn’t cause the entire system to fail.
-
-    - Timeouts
-    - Circuit breaker
-    - Bulkheads (Designing with isolation / Partitioning by criticality)
-    - Steady State
-    - Fail fast
-    - Let It Crash
-    - Handshaking
-    - Test Harness
-    - Shed Load
-    - Designing for redundancy (Load Balancing and Failover)
-    - Bottleneck anti-pattern
-
-<div class="page"/>
-
 ### Decomposition approaches
 
     - Decomposing by functionality
@@ -1150,6 +1130,8 @@ Scale cube and microservices
     - Aggregation for client convenience
     - Aggregation to aid system performance
 
+<div class="page"/>
+
 ### Dealing with Dependencies (Agregate)
 
 Another important topic related to independent deployability is embedding of dependencies. Some may argue that a microservice needs to “embed” every single dependency it may require, so that the microservice can be deployed wherever and whenever, without any coordination with the rest of the system.
@@ -1160,34 +1142,12 @@ Likewise, the trick to microservice mobility is not packing everything but inste
 
 > Pragmatic Mobility (Our goal is to maximize deployment mobility of a microservice, which may mean different things in different contexts)
 
-<div class="page"/>
-
 ### High Cohesion And Loose Coupling
 
     - Domain Coupling
     - Pass-Through Coupling
     - Common Coupling
     - Content Coupling
-
-### Resilience
-### High Availability
-
-    Here are five things you can and should focus on when building a system to make sure that, as its use scales upwards, availability remains high:
-
-    - Build with failure in mind
-    - Always think about scaling
-    - Mitigate risk
-    - Monitor availability
-    - Respond to availability issues in a predictable and defined way
-
-### Observability
-
-    - Distributed Log/Tracing
-    - Data Visualization and Correlation
-    - Open Tracing
-    - Metrics
-    - Analytics Monitoring and Alerting
-    - Event-Driven Log Aggregation Architecture
 
 ### Core services, Supporting services, and User-facing applications
 ### Pattern: Central Aggregating Gateway
@@ -1266,6 +1226,25 @@ Once the microservices team is identified and handed over the specification to i
 
 <div class="page"/>
 
+![Figure 6-1. Key components for the realization of microservices governance](https://raw.githubusercontent.com/dandisy/adaptive-software-engineering/main/Figure%206-1.%20Key%20components%20for%20the%20realization%20of%20microservices%20governance.png)
+
+Deliberate attempts to fail the architecture iteratively. I utilized sessions of brainstorming followed by deliberate attempts to fail the architecture. This is an on-going process. The process is simple:
+
+    1. Understand all the business requirements.
+    2. Make a conscious effort to understand the future vision of the company as well as theproject.
+    3. List all technical, functional and non-functional requirements.
+    4. Create an architecture that encompasses everything from 1-3.
+    5. Brainstorm on how to fail it by identifying:
+        a. Failures,
+        b. Bottlenecks,
+        c. Downtime.
+    6. Come up with an architectural solution to the problems identified in 5.
+    7. Add it to the architecture and create a better pattern.
+    8. Repeat the process (steps 3-7) until we come up with an architectural pattern that works.
+    9. Use these principles to create a modern architecture.
+
+<div class="page"/>
+
 ### Scaling
 
 The potential of a system, network, or even a process to handle a certain number of simultaneous users, sessions, transactions, or operations and grow seamlessly as needed.
@@ -1288,10 +1267,6 @@ The potential of a system, network, or even a process to handle a certain number
         - Cache Poisoning: A Cautionary Tale
     Autoscaling
     Starting Again
-
-![Figure 6-1. Key components for the realization of microservices governance](https://raw.githubusercontent.com/dandisy/adaptive-software-engineering/main/Figure%206-1.%20Key%20components%20for%20the%20realization%20of%20microservices%20governance.png)
-
-<div class="page"/>
 
 ### Reliability
 
@@ -1343,9 +1318,25 @@ Performance is sometimes incorrectly defined as time taken per operation; howeve
 
 <div class="page"/>
 
-### Responsiveness
+### Failur Tolerance (Resilience)
 
-### Availability
+Resilience is a measure of the capacity of a system or individual components in a system to recover quickly from a failure. In other words it is an attribute of a system that enables it to deal with failure in a way that doesn’t cause the entire system to fail.
+
+    - Timeouts
+    - Circuit breaker
+    - Bulkheads (Designing with isolation / Partitioning by criticality)
+    - Steady State
+    - Fail fast
+    - Let It Crash
+    - Handshaking
+    - Test Harness
+    - Shed Load
+    - Designing for redundancy (Load Balancing and Failover)
+    - Bottleneck anti-pattern
+
+### Responsiveness
+    
+### High Availability
 
 A direct effect of scalability is availability. Availability generally refers to the ability of a user to access a system during the window of time in which the system is supposed to be accessible. In the web world, most systems are supposedly accessible 24/7, so the window of time may be a little redundant here. One big thing to keep in mind is responsiveness of the system. A system won’t be considered available if the response time is overly delayed. For example, if an average response from a website takes less than one second, the system will be considered largely unavailable if the system takes, let’s say, one minute to respond.
 
@@ -1353,9 +1344,24 @@ The following formula is used to calculate Availability:
 
     Availability (%) = (Total Time Elapsed - Total Downtime)/(Total Time Elapsed)
 
+Here are five things you can and should focus on when building a system to make sure that, as its use scales upwards, availability remains high:
+
+    - Build with failure in mind
+    - Always think about scaling
+    - Mitigate risk
+    - Monitor availability
+    - Respond to availability issues in a predictable and defined way
+
 ### Observability
 
-    Building Blocks for Observability
+    - Distributed Log/Tracing
+    - Data Visualization and Correlation
+    - Open Tracing
+    - Metrics
+    - Analytics Monitoring and Alerting
+    - Event-Driven Log Aggregation Architecture
+
+Building Blocks for Observability
 
         - Log Aggregation
         - Metrics Aggregation
@@ -1367,28 +1373,7 @@ The following formula is used to calculate Availability:
 
 ### Single points of failures (SPoFs)
 
-### Fault Tolerance
-
 ### Downtime Impact
-
->
-
-<div class="page"/>
-
-    Deliberate attempts to fail the architecture iteratively. I utilized sessions of brainstorming followed by deliberate attempts to fail the architecture. This is an on-going process. The process is simple:
-
-    1. Understand all the business requirements.
-    2. Make a conscious effort to understand the future vision of the company as well as theproject.
-    3. List all technical, functional and non-functional requirements.
-    4. Create an architecture that encompasses everything from 1-3.
-    5. Brainstorm on how to fail it by identifying:
-        a. Failures,
-        b. Bottlenecks,
-        c. Downtime.
-    6. Come up with an architectural solution to the problems identified in 5.
-    7. Add it to the architecture and create a better pattern.
-    8. Repeat the process (steps 3-7) until we come up with an architectural pattern that works.
-    9. Use these principles to create a modern architecture.
 
 <div class="page"/>
 
