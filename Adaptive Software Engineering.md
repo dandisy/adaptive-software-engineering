@@ -416,6 +416,8 @@ Polymorphism is the maintenance of multiple implementations behind a common inte
 
 It is important to note that polymorphism doesn’t banish conditionals. Methods such as ParamHandler::getInstance() will often determine which objects to return based on switch or if statements. These tend to centralize the conditional code into one place, though.
 
+<div class="page"/>
+
 _
 
 ## Encapsulation
