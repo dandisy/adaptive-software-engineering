@@ -1596,6 +1596,7 @@ _
 - Microservices Patterns: WITH EXAMPLES IN JAVA
 - Microservice Patterns and Best Practices: Explore patterns like CQRS and event sourcing to create scalable, maintainable, and testable microservices
 - Building Digital Experience Platforms: A Guide to Developing Next-Generation Enterprise Applications
+- Scalability Patterns - Best Practices for Designing High Volume Websites
 
 >
 
