@@ -487,6 +487,81 @@ _
 
 ![GoF Design Patterns](https://www.modernescpp.com/images/blog/Patterns/Classification/GoFOverview.jpg)
 
+Singleton
+> https://github.com/dandisy/adaptive-software-engineering/blob/main/singleton.md
+
+Factory Method
+> https://github.com/dandisy/adaptive-software-engineering/blob/main/factory.md
+
+Abstract Factory
+> https://github.com/dandisy/adaptive-software-engineering/blob/main/abstract%20factory.md
+
+Builder
+> https://github.com/dandisy/adaptive-software-engineering/blob/main/builder.md
+
+Prototype
+> https://github.com/dandisy/adaptive-software-engineering/blob/main/prototype.md
+
+Flyweight
+> https://github.com/dandisy/adaptive-software-engineering/blob/main/flyweight.md
+
+Adapter
+> https://github.com/dandisy/adaptive-software-engineering/blob/main/adapter.md
+
+Bridge
+> https://github.com/dandisy/adaptive-software-engineering/blob/main/bridge.md
+
+Decorator
+> https://github.com/dandisy/adaptive-software-engineering/blob/main/decorator.md
+
+Facade
+> https://github.com/dandisy/adaptive-software-engineering/blob/main/facade.md
+
+Proxy
+> https://github.com/dandisy/adaptive-software-engineering/blob/main/proxy.md
+
+Composite
+> https://github.com/dandisy/adaptive-software-engineering/blob/main/composite.md
+
+Chain of Responsibility
+> https://github.com/dandisy/adaptive-software-engineering/blob/main/chain%20of%20responsibility.md
+
+Command
+> https://github.com/dandisy/adaptive-software-engineering/blob/main/command.md
+
+Interator
+> https://github.com/dandisy/adaptive-software-engineering/blob/main/interator.md
+
+Composite
+> https://github.com/dandisy/adaptive-software-engineering/blob/main/composite.md
+
+Mediator
+> https://github.com/dandisy/adaptive-software-engineering/blob/main/mediator.md
+
+Memento
+> https://github.com/dandisy/adaptive-software-engineering/blob/main/memento.md
+
+Observer
+> https://github.com/dandisy/adaptive-software-engineering/blob/main/observer.md
+
+Composite
+> https://github.com/dandisy/adaptive-software-engineering/blob/main/composite.md
+
+State
+> https://github.com/dandisy/adaptive-software-engineering/blob/main/state.md
+
+Strategy
+> https://github.com/dandisy/adaptive-software-engineering/blob/main/strategy.md
+
+Visitor
+> https://github.com/dandisy/adaptive-software-engineering/blob/main/visitor.md
+
+Template
+> https://github.com/dandisy/adaptive-software-engineering/blob/main/template.md
+
+Interprater
+> https://github.com/dandisy/adaptive-software-engineering/blob/main/interprater.md
+
 .
 
 <div class="page"/>
