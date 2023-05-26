@@ -499,6 +499,8 @@ Abstract Factory
 Builder
 > https://github.com/dandisy/adaptive-software-engineering/blob/main/builder.md
 
+<div class="page"/>
+
 Prototype
 > https://github.com/dandisy/adaptive-software-engineering/blob/main/prototype.md
 
@@ -540,6 +542,8 @@ Mediator
 
 Memento
 > https://github.com/dandisy/adaptive-software-engineering/blob/main/memento.md
+
+<div class="page"/>
 
 Observer
 > https://github.com/dandisy/adaptive-software-engineering/blob/main/observer.md
