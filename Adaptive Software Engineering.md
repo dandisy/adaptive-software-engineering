@@ -540,10 +540,10 @@ Composite
 Mediator
 > https://github.com/dandisy/adaptive-software-engineering/blob/main/mediator.md
 
+<div class="page"/>
+
 Memento
 > https://github.com/dandisy/adaptive-software-engineering/blob/main/memento.md
-
-<div class="page"/>
 
 Observer
 > https://github.com/dandisy/adaptive-software-engineering/blob/main/observer.md
